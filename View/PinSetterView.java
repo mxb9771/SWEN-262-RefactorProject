@@ -1,5 +1,5 @@
-/*
- * PinSetterView/.java
+package View;/*
+ * View.PinSetterView/.java
  *
  * Version:
  *   $Id$
@@ -13,8 +13,9 @@
  *
  */
 
+import Model.PinsetterEvent;
+
 import java.awt.*;
-import java.awt.event.*;
 import javax.swing.*;
 import java.util.Vector;
 
@@ -43,7 +44,7 @@ public class PinSetterView implements PinsetterObserver {
     
     public PinSetterView ( int laneNum ) {
 	
-	frame = new JFrame ( "Lane " + laneNum + ":" );
+	frame = new JFrame ( "Model.Lane " + laneNum + ":" );
 	
 	Container cpanel = frame.getContentPane ( );
 	

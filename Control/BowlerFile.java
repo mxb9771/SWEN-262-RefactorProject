@@ -1,38 +1,40 @@
-/* BowlerFile.java
+package Control;/* Control.BowlerFile.java
  *
  *  Version:
  *  		$Id$
  * 
  *  Revisions:
- * 		$Log: BowlerFile.java,v $
+ * 		$Log: Control.BowlerFile.java,v $
  * 		Revision 1.5  2003/02/02 17:36:45  ???
  * 		Updated comments to match javadoc format.
  * 		
  * 		Revision 1.4  2003/02/02 16:29:52  ???
- * 		Added ControlDeskEvent and ControlDeskObserver. Updated Queue to allow access to Vector so that contents could be viewed without destroying. Implemented observer model for most of ControlDesk.
+ * 		Added Control.ControlDeskEvent and View.ControlDeskObserver. Updated Model.Queue to allow access to Vector so that contents could be viewed without destroying. Implemented observer model for most of Control.ControlDesk.
  * 		
  * 
  */
 
 /**
- * Class for interfacing with Bowler database
+ * Class for interfacing with Model.Bowler database
  *
  */
+
+import Model.Bowler;
 
 import java.util.*;
 import java.io.*;
 
-class BowlerFile {
+public class BowlerFile {
 
 	/** The location of the bowelr database */
 	private static String BOWLER_DAT = "BOWLERS.DAT";
 
     /**
-     * Retrieves bowler information from the database and returns a Bowler objects with populated fields.
+     * Retrieves bowler information from the database and returns a Model.Bowler objects with populated fields.
      *
      * @param nickName	the nickName of the bolwer to retrieve
      *
-     * @return a Bowler object
+     * @return a Model.Bowler object
      * 
      */
 
@@ -60,11 +62,11 @@ class BowlerFile {
 	}
 
     /**
-     * Stores a Bowler in the database
+     * Stores a Model.Bowler in the database
      *
-     * @param nickName	the NickName of the Bowler
-     * @param fullName	the FullName of the Bowler
-     * @param email	the E-mail Address of the Bowler
+     * @param nickName	the NickName of the Model.Bowler
+     * @param fullName	the FullName of the Model.Bowler
+     * @param email	the E-mail Address of the Model.Bowler
      *
      */
 
