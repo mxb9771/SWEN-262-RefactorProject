@@ -114,7 +114,7 @@ public class LaneStatusView implements ActionListener, LaneObserver, PinsetterOb
 			}
 		}
 		if (e.getSource().equals(viewLane)) {
-			if ( lane.isPartyAssigned() ) { 
+			if ( lane.isPartyAssigned() ) {
 				if ( laneShowing == false ) {
 					lv.show();
 					laneShowing=true;
