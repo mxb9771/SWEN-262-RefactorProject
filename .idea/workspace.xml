@@ -1,39 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="4f764e4f-1f76-4a78-b1d4-7e52c24882e0" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/SWEN-262-RefactorProject.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/SWEN-262-RefactorProject.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Control/BowlerFile.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Control/BowlerFile.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Control/ControlDesk.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Control/ControlDesk.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Control/ControlDeskEvent.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Control/ControlDeskEvent.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Control/ScoreHistoryFile.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Control/ScoreHistoryFile.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Model/Alley.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Model/Alley.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Model/Bowler.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Model/Bowler.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Model/Lane.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Model/Lane.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Model/LaneEvent.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Model/LaneEvent.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Model/Party.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Model/Party.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Model/Pinsetter.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Model/Pinsetter.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Model/PinsetterEvent.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Model/PinsetterEvent.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Model/Queue.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Model/Queue.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Model/Score.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Model/Score.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/View/AddPartyView.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/View/AddPartyView.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/View/ControlDeskObserver.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/View/ControlDeskObserver.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/View/ControlDeskView.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/View/ControlDeskView.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/View/EndGamePrompt.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/View/EndGamePrompt.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/View/EndGameReport.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/View/EndGameReport.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/View/LaneObserver.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/View/LaneObserver.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/View/LaneStatusView.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/View/LaneStatusView.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/View/LaneView.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/View/LaneView.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/View/NewPatronView.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/View/NewPatronView.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/View/PinSetterView.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/View/PinSetterView.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/View/PinsetterObserver.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/View/PinsetterObserver.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/View/PrintableText.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/View/PrintableText.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/View/ScoreReport.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/View/ScoreReport.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/drive.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/drive.java" afterDir="false" />
-    </list>
+    <list default="true" id="4f764e4f-1f76-4a78-b1d4-7e52c24882e0" name="Default Changelist" comment="" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -49,8 +17,11 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/drive.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="34">
-              <caret line="2" column="11" selection-start-line="2" selection-start-column="11" selection-end-line="2" selection-end-column="11" />
+            <state relative-caret-position="408">
+              <caret line="24" lean-forward="true" selection-start-line="24" selection-end-line="24" />
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -142,6 +113,11 @@
     <property name="project.structure.proportion" value="0.15" />
     <property name="project.structure.side.proportion" value="0.2" />
   </component>
+  <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\brshm\IdeaProjects\SWEN-262-RefactorProject\src" />
+    </key>
+  </component>
   <component name="RunDashboard">
     <option name="ruleStates">
       <list>
@@ -179,27 +155,35 @@
       <option name="presentableId" value="Default" />
       <updated>1555817151750</updated>
       <workItem from="1555817152896" duration="602000" />
-      <workItem from="1555863809195" duration="1644000" />
+      <workItem from="1555863809195" duration="2504000" />
     </task>
+    <task id="LOCAL-00001" summary="fix file not found">
+      <created>1555865605301</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1555865605301</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="2246000" />
+    <option name="totallyTimeSpent" value="3106000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="2576" height="1416" extended-state="6" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.20667727" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.10731319" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Image Layers" order="2" />
       <window_info id="Designer" order="3" />
       <window_info id="UI Designer" order="4" />
       <window_info id="Capture Tool" order="5" />
       <window_info id="Favorites" order="6" side_tool="true" />
-      <window_info anchor="bottom" id="Messages" weight="0.32969603" />
+      <window_info anchor="bottom" id="Messages" weight="0.1745908" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" weight="0.32969603" />
-      <window_info anchor="bottom" id="Run" order="2" weight="0.20031177" />
+      <window_info anchor="bottom" id="Run" order="2" weight="0.32424006" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
@@ -207,7 +191,7 @@
       <window_info anchor="bottom" id="Docker" order="7" show_stripe_button="false" />
       <window_info anchor="bottom" id="Version Control" order="8" />
       <window_info anchor="bottom" id="Database Changes" order="9" />
-      <window_info anchor="bottom" id="Terminal" order="10" />
+      <window_info active="true" anchor="bottom" id="Terminal" order="10" visible="true" weight="0.32969603" />
       <window_info anchor="bottom" id="Event Log" order="11" side_tool="true" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
@@ -222,6 +206,10 @@
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="1" />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="fix file not found" />
+    <option name="LAST_COMMIT_MESSAGE" value="fix file not found" />
   </component>
   <component name="editorHistoryManager">
     <entry file="file://$PROJECT_DIR$/src/View/AddPartyView.java">
@@ -254,8 +242,11 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/drive.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="34">
-          <caret line="2" column="11" selection-start-line="2" selection-start-column="11" selection-end-line="2" selection-end-column="11" />
+        <state relative-caret-position="408">
+          <caret line="24" lean-forward="true" selection-start-line="24" selection-end-line="24" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
