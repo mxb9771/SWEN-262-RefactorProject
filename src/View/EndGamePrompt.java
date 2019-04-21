@@ -1,4 +1,4 @@
-package View; /**
+package src.View; /**
  *
  * To change this generated comment edit the template variable "typecomment":
  * Window>Preferences>Java>Templates.
@@ -9,11 +9,6 @@ package View; /**
 import java.awt.*;
 import java.awt.event.*;
 import javax.swing.*;
-import javax.swing.border.*;
-import javax.swing.event.*;
-
-import java.util.*;
-import java.text.*;
 
 public class EndGamePrompt implements ActionListener {
 
@@ -39,7 +34,7 @@ public class EndGamePrompt implements ActionListener {
 		JPanel labelPanel = new JPanel();
 		labelPanel.setLayout(new FlowLayout());
 		
-		JLabel message = new JLabel( "Model.Party " + partyName
+		JLabel message = new JLabel( "src.Model.Party " + partyName
 			+ " has finished bowling.\nWould they like to bowl another game?" );
 
 		labelPanel.add( message );

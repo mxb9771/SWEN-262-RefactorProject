@@ -1,4 +1,4 @@
-package View;/* View.ControlDeskView.java
+package src.View;/* src.View.ControlDeskView.java
  *
  *  Version:
  *			$Id$
@@ -13,10 +13,10 @@ package View;/* View.ControlDeskView.java
  *
  */
 
-import Control.ControlDesk;
-import Control.ControlDeskEvent;
-import Model.Lane;
-import Model.Pinsetter;
+import src.Control.ControlDesk;
+import src.Control.ControlDeskEvent;
+import src.Model.Lane;
+import src.Model.Pinsetter;
 
 import java.awt.*;
 import java.awt.event.*;
@@ -37,7 +37,7 @@ public class ControlDeskView implements ActionListener, ControlDeskObserver {
 	private ControlDesk controlDesk;
 
 	/**
-	 * Displays a GUI representation of the Control.ControlDesk
+	 * Displays a GUI representation of the src.Control.ControlDesk
 	 *
 	 */
 
@@ -47,7 +47,7 @@ public class ControlDeskView implements ActionListener, ControlDeskObserver {
 		this.maxMembers = maxMembers;
 		int numLanes = controlDesk.getNumLanes();
 
-		win = new JFrame("Control Desk");
+		win = new JFrame("src.Control Desk");
 		win.getContentPane().setLayout(new BorderLayout());
 		((JPanel) win.getContentPane()).setOpaque(false);
 
@@ -59,7 +59,7 @@ public class ControlDeskView implements ActionListener, ControlDeskObserver {
 		controlsPanel.setLayout(new GridLayout(3, 1));
 		controlsPanel.setBorder(new TitledBorder("Controls"));
 
-		addParty = new JButton("Add Model.Party");
+		addParty = new JButton("Add src.Model.Party");
 		JPanel addPartyPanel = new JPanel();
 		addPartyPanel.setLayout(new FlowLayout());
 		addParty.addActionListener(this);
@@ -80,10 +80,10 @@ public class ControlDeskView implements ActionListener, ControlDeskObserver {
 		finishedPanel.add(finished);
 		controlsPanel.add(finishedPanel);
 
-		// Model.Lane Status Panel
+		// src.Model.Lane Status Panel
 		JPanel laneStatusPanel = new JPanel();
 		laneStatusPanel.setLayout(new GridLayout(numLanes, 1));
-		laneStatusPanel.setBorder(new TitledBorder("Model.Lane Status"));
+		laneStatusPanel.setBorder(new TitledBorder("src.Model.Lane Status"));
 
 		HashSet lanes=controlDesk.getLanes();
 		Iterator it = lanes.iterator();
@@ -94,14 +94,14 @@ public class ControlDeskView implements ActionListener, ControlDeskObserver {
 			curLane.subscribe(laneStat);
 			((Pinsetter)curLane.getPinsetter()).subscribe(laneStat);
 			JPanel lanePanel = laneStat.showLane();
-			lanePanel.setBorder(new TitledBorder("Model.Lane" + ++laneCount ));
+			lanePanel.setBorder(new TitledBorder("src.Model.Lane" + ++laneCount ));
 			laneStatusPanel.add(lanePanel);
 		}
 
-		// Model.Party Model.Queue Panel
+		// src.Model.Party src.Model.Queue Panel
 		JPanel partyPanel = new JPanel();
 		partyPanel.setLayout(new FlowLayout());
-		partyPanel.setBorder(new TitledBorder("Model.Party Model.Queue"));
+		partyPanel.setBorder(new TitledBorder("src.Model.Party src.Model.Queue"));
 
 		Vector empty = new Vector();
 		empty.add("(Empty)");
@@ -163,7 +163,7 @@ public class ControlDeskView implements ActionListener, ControlDeskObserver {
 	/**
 	 * Receive a new party from andPartyView.
 	 *
-	 * @param addPartyView	the View.AddPartyView that is providing a new party
+	 * @param addPartyView	the src.View.AddPartyView that is providing a new party
 	 *
 	 */
 
@@ -172,9 +172,9 @@ public class ControlDeskView implements ActionListener, ControlDeskObserver {
 	}
 
 	/**
-	 * Receive a broadcast from a Control.ControlDesk
+	 * Receive a broadcast from a src.Control.ControlDesk
 	 *
-	 * @param ce	the Control.ControlDeskEvent that triggered the handler
+	 * @param ce	the src.Control.ControlDeskEvent that triggered the handler
 	 *
 	 */
 

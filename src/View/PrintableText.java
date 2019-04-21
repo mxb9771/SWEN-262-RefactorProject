@@ -1,4 +1,4 @@
-package View; /**
+package src.View; /**
  *
  */
 
@@ -6,7 +6,6 @@ import java.awt.*;
 import java.awt.print.*;
 import java.awt.geom.*;
 import java.awt.font.*;
-import java.text.*;
 
 public class PrintableText implements Printable {
 	String text;

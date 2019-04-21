@@ -1,13 +1,13 @@
-package View; /**
+package src.View; /**
  * 
  * SMTP implementation based on code by Ral Gagnon mailto:real@rgagnon.com
  * 
  */
 
 
-import Control.ScoreHistoryFile;
-import Model.Bowler;
-import Model.Score;
+import src.Control.ScoreHistoryFile;
+import src.Model.Bowler;
+import src.Model.Score;
 
 import java.io.*;
 import java.util.Vector;
@@ -30,7 +30,7 @@ public class ScoreReport {
 		Iterator scoreIt = v.iterator();
 		
 		content = "";
-		content += "--Lucky Strike Bowling Model.Alley Model.Score Report--\n";
+		content += "--Lucky Strike Bowling src.Model.Alley src.Model.Score Report--\n";
 		content += "\n";
 		content += "Report for " + full + ", aka \"" + nick + "\":\n";
 		content += "\n";
@@ -70,7 +70,7 @@ public class ScoreReport {
 			sendln(in, out, "MAIL FROM: <abc1234@rit.edu>");
 			sendln(in, out, "RCPT TO: <" + recipient + ">");
 			sendln(in, out, "DATA");
-			sendln(out, "Subject: Bowling Model.Score Report ");
+			sendln(out, "Subject: Bowling src.Model.Score Report ");
 			sendln(out, "From: <Lucky Strikes Bowling Club>");
 
 			sendln(out, "Content-Type: text/plain; charset=\"us-ascii\"\r\n");

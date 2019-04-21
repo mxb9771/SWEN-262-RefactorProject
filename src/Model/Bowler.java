@@ -1,11 +1,11 @@
-package Model;/*
- * Model.Bowler.java
+package src.Model;/*
+ * src.Model.Bowler.java
  *
  * Version:
  *     $Id$
  *
  * Revisions:
- *     $Log: Model.Bowler.java,v $
+ *     $Log: src.Model.Bowler.java,v $
  *     Revision 1.3  2003/01/15 02:57:40  ???
  *     Added accessors and and equals() method
  *
@@ -13,7 +13,7 @@ package Model;/*
  *     *** empty log message ***
  *
  *     Revision 1.1  2003/01/12 19:09:12  ???
- *     Adding Model.Party, Model.Lane, Model.Bowler, and Model.Alley.
+ *     Adding src.Model.Party, src.Model.Lane, src.Model.Bowler, and src.Model.Alley.
  *
  */
 

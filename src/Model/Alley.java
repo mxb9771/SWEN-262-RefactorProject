@@ -1,12 +1,12 @@
-package Model;/*
+package src.Model;/*
 
- * Model.Alley.java
+ * src.Model.Alley.java
  *
  * Version:
  *   $Id$
  *
  * Revisions:
- *   $Log: Model.Alley.java,v $
+ *   $Log: src.Model.Alley.java,v $
  *   Revision 1.4  2003/02/02 20:28:58  ???
  *   fixed sleep thread bug in lane
  *
@@ -17,11 +17,11 @@ package Model;/*
  *   *** empty log message ***
  *
  *   Revision 1.1  2003/01/12 19:09:12  ???
- *   Adding Model.Party, Model.Lane, Model.Bowler, and Model.Alley.
+ *   Adding src.Model.Party, src.Model.Lane, src.Model.Bowler, and src.Model.Alley.
  *
  */
 
-import Control.ControlDesk;
+import src.Control.ControlDesk;
 
 /**
  *  Class that is the outer container for the bowling sim

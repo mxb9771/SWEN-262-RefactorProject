@@ -1,4 +1,4 @@
-package Control;/* Control.ControlDeskEvent.java
+package src.Control;/* src.Control.ControlDeskEvent.java
  *
  *  Version:
  *  		$Id$
@@ -21,7 +21,7 @@ public class ControlDeskEvent {
 	private Vector partyQueue;
 
     /**
-     * Contstructor for the Control.ControlDeskEvent
+     * Contstructor for the src.Control.ControlDeskEvent
      *
      * @param partyQueue	a Vector of Strings containing the names of the parties in the wait queue
      *

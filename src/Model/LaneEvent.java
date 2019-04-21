@@ -1,7 +1,7 @@
-package Model;/*  $Id$
+package src.Model;/*  $Id$
  *
  *  Revisions:
- *    $Log: Model.LaneEvent.java,v $
+ *    $Log: src.Model.LaneEvent.java,v $
  *    Revision 1.6  2003/02/16 22:59:34  ???
  *    added mechnanical problem flag
  *
@@ -22,9 +22,6 @@ package Model;/*  $Id$
  *
  *
  */
-
-import Model.Bowler;
-import Model.Party;
 
 import java.util.HashMap;
 

@@ -1,4 +1,4 @@
-package Control; /**
+package src.Control; /**
  *
  * To change this generated comment edit the template variable "typecomment":
  * Window>Preferences>Java>Templates.
@@ -6,7 +6,7 @@ package Control; /**
  * Window>Preferences>Java>Code Generation.
  */
 
-import Model.Score;
+import src.Model.Score;
 
 import java.util.*;
 import java.io.*;
@@ -36,7 +36,7 @@ public class ScoreHistoryFile {
 		while ((data = in.readLine()) != null) {
 			// File format is nick\tfname\te-mail
 			String[] scoredata = data.split("\t");
-			//"Nick: scoredata[0] Date: scoredata[1] Model.Score: scoredata[2]
+			//"Nick: scoredata[0] Date: scoredata[1] src.Model.Score: scoredata[2]
 			if (nick.equals(scoredata[0])) {
 				scores.add(new Score(scoredata[0], scoredata[1], scoredata[2]));
 			}

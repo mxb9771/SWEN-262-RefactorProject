@@ -1,8 +1,8 @@
-package Model;
+package src.Model;
 /* $Id$
  *
  * Revisions:
- *   $Log: Model.Lane.java,v $
+ *   $Log: src.Model.Lane.java,v $
  *   Revision 1.52  2003/02/20 20:27:45  ???
  *   Fouls disables.
  *
@@ -16,10 +16,10 @@ package Model;
  *   Works beautifully.
  *
  *   Revision 1.48  2003/02/20 04:10:58  ???
- *   Model.Score reporting code should be good.
+ *   src.Model.Score reporting code should be good.
  *
  *   Revision 1.47  2003/02/17 00:25:28  ???
- *   Added disbale controls for View objects.
+ *   Added disbale controls for src.View objects.
  *
  *   Revision 1.46  2003/02/17 00:20:47  ???
  *   fix for event when game ends
@@ -46,7 +46,7 @@ package Model;
  *   added mechnanical problem flag
  *
  *   Revision 1.36  2003/02/16 21:31:04  ???
- *   Model.Score logging.
+ *   src.Model.Score logging.
  *
  *   Revision 1.35  2003/02/09 21:38:00  ???
  *   Added lots of comments
@@ -64,25 +64,25 @@ package Model;
  *   Still not quite working...
  *
  *   Revision 1.30  2003/02/04 13:33:04  ???
- *   Model.Lane may very well work now.
+ *   src.Model.Lane may very well work now.
  *
  *   Revision 1.29  2003/02/02 23:57:27  ???
  *   fix on pinsetter hack
  *
  *   Revision 1.28  2003/02/02 23:49:48  ???
- *   Model.Pinsetter generates an event when all pins are reset
+ *   src.Model.Pinsetter generates an event when all pins are reset
  *
  *   Revision 1.27  2003/02/02 23:26:32  ???
- *   Control.ControlDesk now runs its own thread and polls for free lanes to assign queue members to
+ *   src.Control.ControlDesk now runs its own thread and polls for free lanes to assign queue members to
  *
  *   Revision 1.26  2003/02/02 23:11:42  ???
  *   parties can now play more than 1 game on a lane, and lanes are properly released after games
  *
  *   Revision 1.25  2003/02/02 22:52:19  ???
- *   Model.Lane compiles
+ *   src.Model.Lane compiles
  *
  *   Revision 1.24  2003/02/02 22:50:10  ???
- *   Model.Lane compiles
+ *   src.Model.Lane compiles
  *
  *   Revision 1.23  2003/02/02 22:47:34  ???
  *   More observering.
@@ -94,7 +94,7 @@ package Model;
  *   added conditions for the party choosing to play another game
  *
  *   Revision 1.20  2003/02/02 21:51:54  ???
- *   Model.LaneEvent may very well be observer method.
+ *   src.Model.LaneEvent may very well be observer method.
  *
  *   Revision 1.19  2003/02/02 20:28:59  ???
  *   fixed sleep thread bug in lane
@@ -109,7 +109,7 @@ package Model;
  *   Worked on scoring.
  *
  *   Revision 1.15  2003/01/30 21:45:08  ???
- *   Fixed speling of received in Model.Lane.
+ *   Fixed speling of received in src.Model.Lane.
  *
  *   Revision 1.14  2003/01/30 21:29:30  ???
  *   Fixed some MVC stuff
@@ -122,7 +122,7 @@ package Model;
  *
  *   Revision 1.11  2003/01/26 22:34:44  ???
  *   Total rewrite of lane and pinsetter for R2's observer model
- *   Added Model.Lane/Model.Pinsetter Observer
+ *   Added src.Model.Lane/src.Model.Pinsetter Observer
  *   Rewrite of scoring algorythm in lane
  *
  *   Revision 1.10  2003/01/26 20:44:05  ???
@@ -131,9 +131,8 @@ package Model;
  * 
  */
 
-import Control.ScoreHistoryFile;
-import Model.Bowler;
-import View.*;
+import src.Control.ScoreHistoryFile;
+import src.View.*;
 
 import java.util.Vector;
 import java.util.Iterator;
@@ -165,7 +164,7 @@ public class Lane extends Thread implements PinsetterObserver {
 	
 	private Bowler currentThrower;			// = the thrower who just took a throw
 
-	/** Model.Lane()
+	/** src.Model.Lane()
 	 * 
 	 * Constructs a new lane and starts its thread
 	 * 
@@ -238,7 +237,7 @@ public class Lane extends Thread implements PinsetterObserver {
 					}
 				}
 			} else if (partyAssigned && gameFinished) {
-				EndGamePrompt egp = new EndGamePrompt( ((Bowler) party.getMembers().get(0)).getNickName() + "'s Model.Party" );
+				EndGamePrompt egp = new EndGamePrompt( ((Bowler) party.getMembers().get(0)).getNickName() + "'s src.Model.Party" );
 				int result = egp.getResult();
 				egp.distroy();
 				egp = null;
@@ -253,7 +252,7 @@ public class Lane extends Thread implements PinsetterObserver {
 					
 				} else if (result == 2) {// no, dont want to play another game
 					Vector printVector;	
-					EndGameReport egr = new EndGameReport( ((Bowler)party.getMembers().get(0)).getNickName() + "'s Model.Party", party);
+					EndGameReport egr = new EndGameReport( ((Bowler)party.getMembers().get(0)).getNickName() + "'s src.Model.Party", party);
 					printVector = egr.getResult();
 					partyAssigned = false;
 					Iterator scoreIt = party.getMembers().iterator();
@@ -376,7 +375,7 @@ public class Lane extends Thread implements PinsetterObserver {
 	 * @pre none
 	 * @post the party has been assigned to the lane
 	 * 
-	 * @param theParty		Model.Party to be assigned
+	 * @param theParty		src.Model.Party to be assigned
 	 */
 	public void assignParty( Party theParty ) {
 		party = theParty;
@@ -597,7 +596,7 @@ public class Lane extends Thread implements PinsetterObserver {
 	}
 
 	/**
-	 * Accessor to get this Model.Lane's pinsetter
+	 * Accessor to get this src.Model.Lane's pinsetter
 	 * 
 	 * @return		A reference to this lane's pinsetter
 	 */
