@@ -1,4 +1,4 @@
-package src.View;/* src.View.AddPartyView.java
+package View;/* src.View.AddPartyView.java
  *
  *  Version
  *  $Id$

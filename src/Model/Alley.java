@@ -1,4 +1,4 @@
-package src.Model;/*
+package Model;/*
 
  * src.Model.Alley.java
  *
@@ -21,7 +21,7 @@ package src.Model;/*
  *
  */
 
-import src.Control.ControlDesk;
+import Control.ControlDesk;
 
 /**
  *  Class that is the outer container for the bowling sim

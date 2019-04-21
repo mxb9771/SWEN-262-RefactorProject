@@ -1,4 +1,4 @@
-package src.View;/* $Id$
+package View;/* $Id$
  *
  * Revisions:
  *   $Log: src.View.PinsetterObserver.java,v $
@@ -17,7 +17,7 @@ package src.View;/* $Id$
  */
 
 
-import src.Model.PinsetterEvent;
+import Model.PinsetterEvent;
 
 public interface PinsetterObserver {
 

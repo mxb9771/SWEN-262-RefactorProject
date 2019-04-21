@@ -1,4 +1,4 @@
-package src.Model;/*  $Id$
+package Model;/*  $Id$
  *
  *  Revisions:
  *    $Log: src.Model.PinsetterEvent.java,v $

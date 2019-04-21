@@ -1,4 +1,4 @@
-package src.Control; /**
+package Control; /**
  *
  * To change this generated comment edit the template variable "typecomment":
  * Window>Preferences>Java>Templates.
@@ -6,7 +6,7 @@ package src.Control; /**
  * Window>Preferences>Java>Code Generation.
  */
 
-import src.Model.Score;
+import Model.Score;
 
 import java.util.*;
 import java.io.*;

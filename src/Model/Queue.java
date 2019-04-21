@@ -1,4 +1,4 @@
-package src.Model;/* src.Model.Queue.java
+package Model;/* src.Model.Queue.java
  *
  *  Version
  *  $Id$

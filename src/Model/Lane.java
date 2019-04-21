@@ -1,4 +1,4 @@
-package src.Model;
+package Model;
 /* $Id$
  *
  * Revisions:
@@ -131,8 +131,8 @@ package src.Model;
  * 
  */
 
-import src.Control.ScoreHistoryFile;
-import src.View.*;
+import Control.ScoreHistoryFile;
+import View.*;
 
 import java.util.Vector;
 import java.util.Iterator;

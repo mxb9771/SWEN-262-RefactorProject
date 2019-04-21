@@ -1,4 +1,4 @@
-package src.View;/* $Id$
+package View;/* $Id$
  *
  * Revisions:
  *   $Log: src.View.LaneObserver.java,v $
@@ -11,7 +11,7 @@ package src.View;/* $Id$
  *
  */
 
-import src.Model.LaneEvent;
+import Model.LaneEvent;
 
 public interface LaneObserver {
 	public void receiveLaneEvent(LaneEvent le);

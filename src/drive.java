@@ -1,8 +1,7 @@
-package src;
 
-import src.Control.ControlDesk;
-import src.Model.Alley;
-import src.View.ControlDeskView;
+import Control.ControlDesk;
+import Model.Alley;
+import View.ControlDeskView;
 
 import java.util.Vector;
 import java.io.*;

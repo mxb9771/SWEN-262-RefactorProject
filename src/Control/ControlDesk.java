@@ -1,4 +1,4 @@
-package src.Control;/* src.Control.ControlDesk.java
+package Control;/* src.Control.ControlDesk.java
  *
  *  Version:
  *  		$Id$
@@ -40,11 +40,11 @@ package src.Control;/* src.Control.ControlDesk.java
  *
  */
 
-import src.Model.Bowler;
-import src.Model.Lane;
-import src.Model.Party;
-import src.Model.Queue;
-import src.View.ControlDeskObserver;
+import Model.Bowler;
+import Model.Lane;
+import Model.Party;
+import Model.Queue;
+import View.ControlDeskObserver;
 
 import java.util.*;
 import java.io.*;
@@ -55,7 +55,7 @@ public class ControlDesk extends Thread {
 	private HashSet lanes;
 
 	/** The party wait queue */
-	private src.Model.Queue partyQueue;
+	private Model.Queue partyQueue;
 
 	/** The number of lanes represented */
 	private int numLanes;
@@ -203,12 +203,12 @@ public class ControlDesk extends Thread {
 
     /**
      * Allows objects to subscribe as observers
-     * 
-     * @param adding	the src.View.ControlDeskObserver that will be subscribed
+     *
+     * @param adding    the src.View.ControlDeskObserver that will be subscribed
      *
      */
 
-	public void subscribe(ControlDeskObserver adding) {
+	public void subscribe(View.ControlDeskView adding) {
 		subscribers.add(adding);
 	}
 

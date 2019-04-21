@@ -1,4 +1,4 @@
-package src.View; /**
+package View; /**
  *
  * To change this generated comment edit the template variable "typecomment":
  * Window>Preferences>Java>Templates.
@@ -6,8 +6,8 @@ package src.View; /**
  * Window>Preferences>Java>Code Generation.
  */
 
-import src.Model.Bowler;
-import src.Model.Party;
+import Model.Bowler;
+import Model.Party;
 
 import java.awt.*;
 import java.awt.event.*;
@@ -43,7 +43,7 @@ public class EndGameReport implements ActionListener, ListSelectionListener {
 		// Member Panel
 		JPanel partyPanel = new JPanel();
 		partyPanel.setLayout(new FlowLayout());
-		partyPanel.setBorder(new TitledBorder("src.Model.Party Members"));
+		partyPanel.setBorder(new TitledBorder("Party Members"));
 		
 		Vector myVector = new Vector();
 		Iterator iter = (party.getMembers()).iterator();

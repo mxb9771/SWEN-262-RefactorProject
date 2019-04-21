@@ -1,4 +1,4 @@
-package src.View; /**
+package View; /**
  *
  * To change this generated comment edit the template variable "typecomment":
  * Window>Preferences>Java>Templates.
@@ -6,7 +6,7 @@ package src.View; /**
  * Window>Preferences>Java>Code Generation.
  */
 
-import src.Model.*;
+import Model.*;
 
 import java.awt.*;
 import java.awt.event.*;
@@ -59,13 +59,13 @@ public class LaneStatusView implements ActionListener, LaneObserver, PinsetterOb
 
 		Insets buttonMargin = new Insets(4, 4, 4, 4);
 
-		viewLane = new JButton("src.View src.Model.Lane");
+		viewLane = new JButton("View Lane");
 		JPanel viewLanePanel = new JPanel();
 		viewLanePanel.setLayout(new FlowLayout());
 		viewLane.addActionListener(this);
 		viewLanePanel.add(viewLane);
 
-		viewPinSetter = new JButton("src.Model.Pinsetter");
+		viewPinSetter = new JButton("Pinsetter");
 		JPanel viewPinSetterPanel = new JPanel();
 		viewPinSetterPanel.setLayout(new FlowLayout());
 		viewPinSetter.addActionListener(this);

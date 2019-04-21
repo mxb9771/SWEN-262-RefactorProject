@@ -1,4 +1,4 @@
-package src.Model;/*  $Id$
+package Model;/*  $Id$
  *
  *  Revisions:
  *    $Log: src.Model.LaneEvent.java,v $

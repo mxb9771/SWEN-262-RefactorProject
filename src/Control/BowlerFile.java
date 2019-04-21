@@ -1,4 +1,4 @@
-package src.Control;/* src.Control.BowlerFile.java
+package Control;/* src.Control.BowlerFile.java
  *
  *  Version:
  *  		$Id$
@@ -19,7 +19,7 @@ package src.Control;/* src.Control.BowlerFile.java
  *
  */
 
-import src.Model.Bowler;
+import Model.Bowler;
 
 import java.util.*;
 import java.io.*;

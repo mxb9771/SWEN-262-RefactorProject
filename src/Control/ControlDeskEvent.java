@@ -1,4 +1,4 @@
-package src.Control;/* src.Control.ControlDeskEvent.java
+package Control;/* src.Control.ControlDeskEvent.java
  *
  *  Version:
  *  		$Id$

@@ -1,12 +1,12 @@
-package src.View;/*
+package View;/*
  *  constructs a prototype src.Model.Lane src.View
  *
  */
 
-import src.Model.Bowler;
-import src.Model.Lane;
-import src.Model.LaneEvent;
-import src.Model.Party;
+import Model.Bowler;
+import Model.Lane;
+import Model.LaneEvent;
+import Model.Party;
 
 import java.awt.*;
 import java.awt.event.*;
@@ -39,7 +39,7 @@ public class LaneView implements LaneObserver, ActionListener {
 		this.lane = lane;
 
 		initDone = true;
-		frame = new JFrame("src.Model.Lane " + laneNum + ":");
+		frame = new JFrame("Lane " + laneNum + ":");
 		cpanel = frame.getContentPane();
 		cpanel.setLayout(new BorderLayout());
 

@@ -1,4 +1,4 @@
-package src.View;/* src.View.ControlDeskObserver.java
+package View;/* src.View.ControlDeskObserver.java
  *
  *  Version
  *  $Id$
@@ -8,7 +8,7 @@ package src.View;/* src.View.ControlDeskObserver.java
  * 
  */
 
-import src.Control.ControlDeskEvent;
+import Control.ControlDeskEvent;
 
 /**
  * Interface for classes that observe control desk events

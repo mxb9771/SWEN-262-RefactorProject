@@ -1,4 +1,4 @@
-package src.Model;/*
+package Model;/*
  * src.Model.Pinsetter.java
  *
  * Version:
@@ -70,7 +70,7 @@ package src.Model;/*
  *
  */
 
-import src.View.PinsetterObserver;
+import View.PinsetterObserver;
 
 import java.util.*;
 
