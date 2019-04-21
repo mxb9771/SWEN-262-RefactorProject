@@ -59,7 +59,7 @@ public class ControlDeskView implements ActionListener, ControlDeskObserver {
 		controlsPanel.setLayout(new GridLayout(3, 1));
 		controlsPanel.setBorder(new TitledBorder("Controls"));
 
-		addParty = new JButton("Add src.Model.Party");
+		addParty = new JButton("Add Party");
 		JPanel addPartyPanel = new JPanel();
 		addPartyPanel.setLayout(new FlowLayout());
 		addParty.addActionListener(this);
@@ -149,7 +149,7 @@ public class ControlDeskView implements ActionListener, ControlDeskObserver {
 
 	public void actionPerformed(ActionEvent e) {
 		if (e.getSource().equals(addParty)) {
-			AddPartyView addPartyWin = new AddPartyView(this, maxMembers);
+			new AddPartyView(this, maxMembers);
 		}
 		if (e.getSource().equals(assign)) {
 			controlDesk.assignLane();

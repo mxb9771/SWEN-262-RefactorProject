@@ -7,6 +7,7 @@ package src.View; /**
  */
 
 import src.Model.*;
+import src.Model.Lane;
 
 import java.awt.*;
 import java.awt.event.*;
@@ -114,7 +115,7 @@ public class LaneStatusView implements ActionListener, LaneObserver, PinsetterOb
 			}
 		}
 		if (e.getSource().equals(viewLane)) {
-			if ( lane.isPartyAssigned() ) { 
+			if ( lane.isPartyAssigned() ) {
 				if ( laneShowing == false ) {
 					lv.show();
 					laneShowing=true;

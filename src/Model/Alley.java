@@ -29,16 +29,15 @@ import src.Control.ControlDesk;
  */
 
 public class Alley {
-	public ControlDesk controldesk;
 
+	public ControlDesk controldesk;
     public Alley( int numLanes ) {
         controldesk = new ControlDesk( numLanes );
     }
-
 	public ControlDesk getControlDesk() {
 		return controldesk;
 	}
-	
+
 }
 
 

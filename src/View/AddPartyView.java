@@ -59,7 +59,7 @@ public class AddPartyView implements ActionListener, ListSelectionListener {
 		this.controlDesk = controlDesk;
 		maxSize = max;
 
-		win = new JFrame("Add src.Model.Party");
+		win = new JFrame("Add Party");
 		win.getContentPane().setLayout(new BorderLayout());
 		((JPanel) win.getContentPane()).setOpaque(false);
 
@@ -69,7 +69,7 @@ public class AddPartyView implements ActionListener, ListSelectionListener {
 		// src.Model.Party Panel
 		JPanel partyPanel = new JPanel();
 		partyPanel.setLayout(new FlowLayout());
-		partyPanel.setBorder(new TitledBorder("Your src.Model.Party"));
+		partyPanel.setBorder(new TitledBorder("Your Party"));
 
 		party = new Vector();
 		Vector empty = new Vector();
@@ -86,7 +86,7 @@ public class AddPartyView implements ActionListener, ListSelectionListener {
 		// src.Model.Bowler Database
 		JPanel bowlerPanel = new JPanel();
 		bowlerPanel.setLayout(new FlowLayout());
-		bowlerPanel.setBorder(new TitledBorder("src.Model.Bowler Database"));
+		bowlerPanel.setBorder(new TitledBorder("Bowler Database"));
 
 		try {
 			bowlerdb = new Vector(BowlerFile.getBowlers());
@@ -109,7 +109,7 @@ public class AddPartyView implements ActionListener, ListSelectionListener {
 
 		Insets buttonMargin = new Insets(4, 4, 4, 4);
 
-		addPatron = new JButton("Add to src.Model.Party");
+		addPatron = new JButton("Add to Party");
 		JPanel addPatronPanel = new JPanel();
 		addPatronPanel.setLayout(new FlowLayout());
 		addPatron.addActionListener(this);
@@ -160,7 +160,7 @@ public class AddPartyView implements ActionListener, ListSelectionListener {
 		if (e.getSource().equals(addPatron)) {
 			if (selectedNick != null && party.size() < maxSize) {
 				if (party.contains(selectedNick)) {
-					System.err.println("Member already in src.Model.Party");
+					System.err.println("Member already in Party");
 				} else {
 					party.add(selectedNick);
 					partyList.setListData(party);
