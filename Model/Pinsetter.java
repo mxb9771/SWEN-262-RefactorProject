@@ -28,7 +28,7 @@ package Model;/*
  *   Model.Pinsetter generates an event when all pins are reset
  *
  *   Revision 1.14  2003/02/02 23:26:32  ???
- *   Control.ControlDesk now runs its own thread and polls for free lanes to assign queue members to
+ *   Model.ControlDesk now runs its own thread and polls for free lanes to assign queue members to
  *
  *   Revision 1.13  2003/02/02 23:21:30  ???
  *   pinsetter should give better results
@@ -70,6 +70,7 @@ package Model;/*
  *
  */
 
+import Control.PinsetterEvent;
 import View.Observer;
 
 import java.util.*;

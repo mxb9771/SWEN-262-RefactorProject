@@ -73,7 +73,7 @@ package Model;
  *   Model.Pinsetter generates an event when all pins are reset
  *
  *   Revision 1.27  2003/02/02 23:26:32  ???
- *   Control.ControlDesk now runs its own thread and polls for free lanes to assign queue members to
+ *   Model.ControlDesk now runs its own thread and polls for free lanes to assign queue members to
  *
  *   Revision 1.26  2003/02/02 23:11:42  ???
  *   parties can now play more than 1 game on a lane, and lanes are properly released after games
@@ -94,7 +94,7 @@ package Model;
  *   added conditions for the party choosing to play another game
  *
  *   Revision 1.20  2003/02/02 21:51:54  ???
- *   Model.LaneEvent may very well be observer method.
+ *   Control.LaneEvent may very well be observer method.
  *
  *   Revision 1.19  2003/02/02 20:28:59  ???
  *   fixed sleep thread bug in lane
@@ -132,6 +132,8 @@ package Model;
  */
 
 import Control.ControlDeskEvent;
+import Control.LaneEvent;
+import Control.PinsetterEvent;
 import Control.ScoreHistoryFile;
 import View.*;
 

@@ -15,7 +15,7 @@ package View;/* View.AddPartyView.java
  * 		Made updates to migrate to observer model.
  * 		
  * 		Revision 1.4  2003/02/02 16:29:52  ???
- * 		Added Control.ControlDeskEvent and View.ControlDeskObserver. Updated Model.Queue to allow access to Vector so that contents could be viewed without destroying. Implemented observer model for most of Control.ControlDesk.
+ * 		Added Control.ControlDeskEvent and View.ControlDeskObserver. Updated Model.Queue to allow access to Vector so that contents could be viewed without destroying. Implemented observer model for most of Model.ControlDesk.
  * 		
  * 
  */
