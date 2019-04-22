@@ -47,11 +47,37 @@ public class ControlDeskView implements ActionListener, Observer {
 
 		this.controlDesk = controlDesk;
 		this.maxMembers = maxMembers;
-		int numLanes = controlDesk.getNumLanes();
+		createWindow();
+		win.show();
 
+	}
+
+	public void createWindow(){
 		win = new JFrame("Control Desk");
 		win.getContentPane().setLayout(new BorderLayout());
 		((JPanel) win.getContentPane()).setOpaque(false);
+		JPanel colPanel = createColPanel();
+		win.getContentPane().add("Center", colPanel);
+
+		win.pack();
+
+		/* Close program when this window closes */
+		win.addWindowListener(new WindowAdapter() {
+			public void windowClosing(WindowEvent e) {
+				System.exit(0);
+			}
+		});
+
+		// Center Window on Screen
+		Dimension screenSize = (Toolkit.getDefaultToolkit()).getScreenSize();
+		win.setLocation(
+				((screenSize.width) / 2) - ((win.getSize().width) / 2),
+				((screenSize.height) / 2) - ((win.getSize().height) / 2));
+	}
+
+	public JPanel createColPanel(){
+		int numLanes = controlDesk.getNumLanes();
+
 
 		JPanel colPanel = new JPanel();
 		colPanel.setLayout(new BorderLayout());
@@ -113,7 +139,7 @@ public class ControlDeskView implements ActionListener, Observer {
 		partyList.setVisibleRowCount(10);
 		JScrollPane partyPane = new JScrollPane(partyList);
 		partyPane.setVerticalScrollBarPolicy(
-			JScrollPane.VERTICAL_SCROLLBAR_ALWAYS);
+				JScrollPane.VERTICAL_SCROLLBAR_ALWAYS);
 		partyPanel.add(partyPane);
 		//		partyPanel.add(partyList);
 
@@ -122,25 +148,9 @@ public class ControlDeskView implements ActionListener, Observer {
 		colPanel.add(laneStatusPanel, "Center");
 		colPanel.add(partyPanel, "West");
 
-		win.getContentPane().add("Center", colPanel);
-
-		win.pack();
-
-		/* Close program when this window closes */
-		win.addWindowListener(new WindowAdapter() {
-			public void windowClosing(WindowEvent e) {
-				System.exit(0);
-			}
-		});
-
-		// Center Window on Screen
-		Dimension screenSize = (Toolkit.getDefaultToolkit()).getScreenSize();
-		win.setLocation(
-			((screenSize.width) / 2) - ((win.getSize().width) / 2),
-			((screenSize.height) / 2) - ((win.getSize().height) / 2));
-		win.show();
-
+		return colPanel;
 	}
+
 
 	/**
 	 * Handler for actionEvents
