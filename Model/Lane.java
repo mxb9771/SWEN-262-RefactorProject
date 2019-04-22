@@ -133,6 +133,8 @@ package Model;
 
 import Control.ControlDeskEvent;
 import Control.ScoreHistoryFile;
+import Model.LaneState.LaneStatusState;
+import Model.LaneState.LaneVacant;
 import View.*;
 
 import java.util.Vector;
@@ -162,6 +164,8 @@ public class Lane extends Thread implements Observer{
 	
 	private int[][] finalScores;
 	private int gameNumber;
+
+	private LaneStatusState state;
 	
 	private Bowler currentThrower;			// = the thrower who just took a throw
 
@@ -176,6 +180,8 @@ public class Lane extends Thread implements Observer{
 		setter = new Pinsetter();
 		scores = new HashMap();
 		subscribers = new Vector();
+
+		state = new LaneVacant();
 
 		gameIsHalted = false;
 		partyAssigned = false;
@@ -192,21 +198,21 @@ public class Lane extends Thread implements Observer{
 	 * entry point for execution of this lane 
 	 */
 	public void run() {
-		
+
+		//state.function();
+
+
 		while (true) {
+
 			if (partyAssigned && !gameFinished) {	// we have a party on this lane,
-								// so next bower can take a throw
-			
+				// so next bower can take a throw
 				while (gameIsHalted) {
 					try {
 						sleep(10);
 					} catch (Exception e) {}
 				}
-
-
 				if (bowlerIterator.hasNext()) {
 					currentThrower = (Bowler)bowlerIterator.next();
-
 					canThrowAgain = true;
 					tenthFrameStrike = false;
 					ball = 0;
@@ -214,20 +220,16 @@ public class Lane extends Thread implements Observer{
 						setter.ballThrown();		// simulate the thrower's ball hiting
 						ball++;
 					}
-					
 					if (frameNumber == 9){
 						finalScores[bowlIndex][gameNumber] = cumulScores[bowlIndex][9];
 						try{
-						Date date = new Date();
-						String dateString = "" + date.getHours() + ":" + date.getMinutes() + " " + date.getMonth() + "/" + date.getDay() + "/" + (date.getYear() + 1900);
-						ScoreHistoryFile.addScore(currentThrower.getNick(), dateString, new Integer(cumulScores[bowlIndex][9]).toString());
-						} catch (Exception e) {System.err.println("Exception in addScore. "+ e );} 
+							Date date = new Date();
+							String dateString = "" + date.getHours() + ":" + date.getMinutes() + " " + date.getMonth() + "/" + date.getDay() + "/" + (date.getYear() + 1900);
+							ScoreHistoryFile.addScore(currentThrower.getNick(), dateString, new Integer(cumulScores[bowlIndex][9]).toString());
+						} catch (Exception e) {System.err.println("Exception in addScore. "+ e );}
 					}
-
-					
 					setter.reset();
 					bowlIndex++;
-					
 				} else {
 					frameNumber++;
 					resetBowlerIterator();
@@ -238,30 +240,32 @@ public class Lane extends Thread implements Observer{
 					}
 				}
 			} else if (partyAssigned && gameFinished) {
+
 				EndGamePrompt egp = new EndGamePrompt( ((Bowler) party.getMembers().get(0)).getNickName() + "'s Model.Party" );
 				int result = egp.getResult();
 				egp.distroy();
 				egp = null;
-				
-				
+
 				System.out.println("result was: " + result);
-				
+
 				// TODO: send record of scores to control desk
+
 				if (result == 1) {					// yes, want to play again
 					resetScores();
 					resetBowlerIterator();
-					
+
 				} else if (result == 2) {// no, dont want to play another game
-					Vector printVector;	
+
+					Vector printVector;
 					EndGameReport egr = new EndGameReport( ((Bowler)party.getMembers().get(0)).getNickName() + "'s Party", party);
 					printVector = egr.getResult();
 					partyAssigned = false;
 					Iterator scoreIt = party.getMembers().iterator();
 					party = null;
 					partyAssigned = false;
-					
+
 					publish(lanePublish());
-					
+
 					int myIndex = 0;
 					while (scoreIt.hasNext()){
 						Bowler thisBowler = (Bowler)scoreIt.next();
@@ -274,16 +278,15 @@ public class Lane extends Thread implements Observer{
 								sr.sendPrintout();
 							}
 						}
-
 					}
 				}
 			}
-			
-			
+
 			try {
 				sleep(10);
 			} catch (Exception e) {}
 		}
+
 	}
 	
 	/** recievePinsetterEvent()
