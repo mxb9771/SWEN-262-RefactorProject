@@ -31,7 +31,6 @@ import java.util.HashMap;
 public class LaneEvent {
 
 	private Party p;
-	private int frame;
 	private int ball;
 	private Bowler bowler;
 	private int[][] cumulScore;
@@ -72,10 +71,6 @@ public class LaneEvent {
 	
 	public int getIndex() {
 		return index;
-	}
-
-	public int getFrame( ) {
-		return frame;
 	}
 
 	public int getBall( ) {

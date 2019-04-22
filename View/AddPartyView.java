@@ -61,102 +61,112 @@ public class AddPartyView implements ActionListener, ListSelectionListener {
 		this.controlDesk = controlDesk;
 		maxSize = max;
 
-		win = new JFrame("Add Party");
-		win.getContentPane().setLayout(new BorderLayout());
-		((JPanel) win.getContentPane()).setOpaque(false);
-
-		JPanel colPanel = new JPanel();
-		colPanel.setLayout(new GridLayout(1, 3));
-
-		// Model.Party Panel
-		JPanel partyPanel = new JPanel();
-		partyPanel.setLayout(new FlowLayout());
-		partyPanel.setBorder(new TitledBorder("Your Party"));
-
-		party = new Vector<String>();
-		Vector<String> empty = new Vector<String>();
-		empty.add("(Empty)");
-
-		partyList = new JList<String>(empty);
-		partyList.setFixedCellWidth(120);
-		partyList.setVisibleRowCount(5);
-		partyList.addListSelectionListener(this);
-		JScrollPane partyPane = new JScrollPane(partyList);
-		//        partyPane.setVerticalScrollBarPolicy(JScrollPane.VERTICAL_SCROLLBAR_ALWAYS);
-		partyPanel.add(partyPane);
-
-		// Model.Bowler Database
-		JPanel bowlerPanel = new JPanel();
-		bowlerPanel.setLayout(new FlowLayout());
-		bowlerPanel.setBorder(new TitledBorder("Bowler Database"));
-
-		try {
-			bowlerdb = new Vector<Object>(BowlerFile.getBowlers());
-		} catch (Exception e) {
-			System.err.println("File Error");
-			bowlerdb = new Vector<>();
-		}
-		allBowlers = new JList<Object>(bowlerdb);
-		allBowlers.setVisibleRowCount(8);
-		allBowlers.setFixedCellWidth(120);
-		JScrollPane bowlerPane = new JScrollPane(allBowlers);
-		bowlerPane.setVerticalScrollBarPolicy(
-			JScrollPane.VERTICAL_SCROLLBAR_ALWAYS);
-		allBowlers.addListSelectionListener(this);
-		bowlerPanel.add(bowlerPane);
-
-		// Button Panel
-		JPanel buttonPanel = new JPanel();
-		buttonPanel.setLayout(new GridLayout(4, 1));
-
-		Insets buttonMargin = new Insets(4, 4, 4, 4);
-
-		addPatron = new JButton("Add to Party");
-		JPanel addPatronPanel = new JPanel();
-		addPatronPanel.setLayout(new FlowLayout());
-		addPatron.addActionListener(this);
-		addPatronPanel.add(addPatron);
-
-		remPatron = new JButton("Remove Member");
-		JPanel remPatronPanel = new JPanel();
-		remPatronPanel.setLayout(new FlowLayout());
-		remPatron.addActionListener(this);
-		remPatronPanel.add(remPatron);
-
-		newPatron = new JButton("New Patron");
-		JPanel newPatronPanel = new JPanel();
-		newPatronPanel.setLayout(new FlowLayout());
-		newPatron.addActionListener(this);
-		newPatronPanel.add(newPatron);
-
-		finished = new JButton("Finished");
-		JPanel finishedPanel = new JPanel();
-		finishedPanel.setLayout(new FlowLayout());
-		finished.addActionListener(this);
-		finishedPanel.add(finished);
-
-		buttonPanel.add(addPatronPanel);
-		buttonPanel.add(remPatronPanel);
-		buttonPanel.add(newPatronPanel);
-		buttonPanel.add(finishedPanel);
-
-		// Clean up main panel
-		colPanel.add(partyPanel);
-		colPanel.add(bowlerPanel);
-		colPanel.add(buttonPanel);
-
-		win.getContentPane().add("Center", colPanel);
-
-		win.pack();
-
-		// Center Window on Screen
-		Dimension screenSize = (Toolkit.getDefaultToolkit()).getScreenSize();
-		win.setLocation(
-			((screenSize.width) / 2) - ((win.getSize().width) / 2),
-			((screenSize.height) / 2) - ((win.getSize().height) / 2));
-		win.show();
-
+		initailize();
 	}
+
+	private JPanel setupButtons(){
+        JPanel buttonPanel = new JPanel();
+        buttonPanel.setLayout(new GridLayout(4, 1));
+
+        Insets buttonMargin = new Insets(4, 4, 4, 4);
+
+        addPatron = new JButton("Add to Party");
+        JPanel addPatronPanel = new JPanel();
+        addPatronPanel.setLayout(new FlowLayout());
+        addPatron.addActionListener(this);
+        addPatronPanel.add(addPatron);
+
+        remPatron = new JButton("Remove Member");
+        JPanel remPatronPanel = new JPanel();
+        remPatronPanel.setLayout(new FlowLayout());
+        remPatron.addActionListener(this);
+        remPatronPanel.add(remPatron);
+
+        newPatron = new JButton("New Patron");
+        JPanel newPatronPanel = new JPanel();
+        newPatronPanel.setLayout(new FlowLayout());
+        newPatron.addActionListener(this);
+        newPatronPanel.add(newPatron);
+
+        finished = new JButton("Finished");
+        JPanel finishedPanel = new JPanel();
+        finishedPanel.setLayout(new FlowLayout());
+        finished.addActionListener(this);
+        finishedPanel.add(finished);
+
+        buttonPanel.add(addPatronPanel);
+        buttonPanel.add(remPatronPanel);
+        buttonPanel.add(newPatronPanel);
+        buttonPanel.add(finishedPanel);
+
+        return buttonPanel;
+    }
+
+    private void initailize(){
+        win = new JFrame("Add Party");
+        win.getContentPane().setLayout(new BorderLayout());
+        ((JPanel) win.getContentPane()).setOpaque(false);
+
+        JPanel colPanel = new JPanel();
+        colPanel.setLayout(new GridLayout(1, 3));
+
+        // Model.Party Panel
+        JPanel partyPanel = new JPanel();
+        partyPanel.setLayout(new FlowLayout());
+        partyPanel.setBorder(new TitledBorder("Your Party"));
+
+        party = new Vector<String>();
+        Vector<String> empty = new Vector<String>();
+        empty.add("(Empty)");
+
+        partyList = new JList<String>(empty);
+        partyList.setFixedCellWidth(120);
+        partyList.setVisibleRowCount(5);
+        partyList.addListSelectionListener(this);
+        JScrollPane partyPane = new JScrollPane(partyList);
+        //        partyPane.setVerticalScrollBarPolicy(JScrollPane.VERTICAL_SCROLLBAR_ALWAYS);
+        partyPanel.add(partyPane);
+
+        // Model.Bowler Database
+        JPanel bowlerPanel = new JPanel();
+        bowlerPanel.setLayout(new FlowLayout());
+        bowlerPanel.setBorder(new TitledBorder("Bowler Database"));
+
+        try {
+            bowlerdb = new Vector<Object>(BowlerFile.getBowlers());
+        } catch (Exception e) {
+            System.err.println("File Error");
+            bowlerdb = new Vector<>();
+        }
+        allBowlers = new JList<Object>(bowlerdb);
+        allBowlers.setVisibleRowCount(8);
+        allBowlers.setFixedCellWidth(120);
+        JScrollPane bowlerPane = new JScrollPane(allBowlers);
+        bowlerPane.setVerticalScrollBarPolicy(
+                JScrollPane.VERTICAL_SCROLLBAR_ALWAYS);
+        allBowlers.addListSelectionListener(this);
+        bowlerPanel.add(bowlerPane);
+
+        // Button Panel
+        JPanel buttonPanel = setupButtons();
+
+        // Clean up main panel
+        colPanel.add(partyPanel);
+        colPanel.add(bowlerPanel);
+        colPanel.add(buttonPanel);
+
+        win.getContentPane().add("Center", colPanel);
+
+        win.pack();
+
+        // Center Window on Screen
+        Dimension screenSize = (Toolkit.getDefaultToolkit()).getScreenSize();
+        win.setLocation(
+                ((screenSize.width) / 2) - ((win.getSize().width) / 2),
+                ((screenSize.height) / 2) - ((win.getSize().height) / 2));
+        win.show();
+
+    }
 
 	public void actionPerformed(ActionEvent e) {
 		if (e.getSource().equals(addPatron)) {
