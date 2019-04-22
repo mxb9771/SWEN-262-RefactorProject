@@ -13,6 +13,8 @@ package View;/*
  *
  */
 
+import Control.ControlDeskEvent;
+import Model.LaneEvent;
 import Model.PinsetterEvent;
 
 import java.awt.*;
@@ -20,7 +22,7 @@ import javax.swing.*;
 import java.util.Vector;
 
 
-public class PinSetterView implements PinsetterObserver {
+public class PinSetterView implements Observer {
 
 
     private Vector pinVect = new Vector ( );
@@ -185,7 +187,7 @@ public class PinSetterView implements PinsetterObserver {
      */
     
 
-    public void receivePinsetterEvent(PinsetterEvent pe){
+    public void receiveEvent(PinsetterEvent pe){
 	if ( !(pe.isFoulCommited()) ) {
 	    	JLabel tempPin = new JLabel ( );
 	    	for ( int c = 0; c < 10; c++ ) {
@@ -206,8 +208,18 @@ public class PinSetterView implements PinsetterObserver {
 		secondRoll.setBackground( Color.black);
 	}
     }
-    
-    public void show() {
+
+	@Override
+	public void receiveEvent(ControlDeskEvent ce) {
+
+	}
+
+	@Override
+	public void receiveEvent(LaneEvent le) {
+
+	}
+
+	public void show() {
     	frame.show();
     }
 

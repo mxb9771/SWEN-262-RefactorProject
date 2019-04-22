@@ -3,17 +3,15 @@ package View;/*
  *
  */
 
-import Model.Bowler;
-import Model.Lane;
-import Model.LaneEvent;
-import Model.Party;
+import Control.ControlDeskEvent;
+import Model.*;
 
 import java.awt.*;
 import java.awt.event.*;
 import javax.swing.*;
 import java.util.*;
 
-public class LaneView implements LaneObserver, ActionListener {
+public class LaneView implements Observer, ActionListener {
 
 	private int roll;
 	private boolean initDone = true;
@@ -83,7 +81,7 @@ public class LaneView implements LaneObserver, ActionListener {
 				ballLabel[i][j] = new JLabel(" ");
 				balls[i][j] = new JPanel();
 				balls[i][j].setBorder(
-					BorderFactory.createLineBorder(Color.BLACK));
+						BorderFactory.createLineBorder(Color.BLACK));
 				balls[i][j].add(ballLabel[i][j]);
 			}
 		}
@@ -107,14 +105,14 @@ public class LaneView implements LaneObserver, ActionListener {
 		for (int i = 0; i != numBowlers; i++) {
 			pins[i] = new JPanel();
 			pins[i].setBorder(
-				BorderFactory.createTitledBorder(
-					((Bowler) bowlers.get(i)).getNick()));
+					BorderFactory.createTitledBorder(
+							((Bowler) bowlers.get(i)).getNick()));
 			pins[i].setLayout(new GridLayout(0, 10));
 			for (int k = 0; k != 10; k++) {
 				scores[i][k] = new JPanel();
 				scoreLabel[i][k] = new JLabel("  ", SwingConstants.CENTER);
 				scores[i][k].setBorder(
-					BorderFactory.createLineBorder(Color.BLACK));
+						BorderFactory.createLineBorder(Color.BLACK));
 				scores[i][k].setLayout(new GridLayout(0, 1));
 				scores[i][k].add(ballGrid[i][k], BorderLayout.EAST);
 				scores[i][k].add(scoreLabel[i][k], BorderLayout.SOUTH);
@@ -127,7 +125,7 @@ public class LaneView implements LaneObserver, ActionListener {
 		return panel;
 	}
 
-	public void receiveLaneEvent(LaneEvent le) {
+	public void receiveEvent(LaneEvent le) {
 		if (lane.isPartyAssigned()) {
 			int numBowlers = le.getParty().getMembers().size();
 			while (!initDone) {
@@ -139,8 +137,8 @@ public class LaneView implements LaneObserver, ActionListener {
 			}
 
 			if (le.getFrameNum() == 1
-				&& le.getBall() == 0
-				&& le.getIndex() == 0) {
+					&& le.getBall() == 0
+					&& le.getIndex() == 0) {
 				System.out.println("Making the frame.");
 				cpanel.removeAll();
 				cpanel.add(makeFrame(le.getParty()), "Center");
@@ -170,35 +168,35 @@ public class LaneView implements LaneObserver, ActionListener {
 				for (int i = 0; i <= le.getFrameNum() - 1; i++) {
 					if (lescores[k][i] != 0)
 						scoreLabel[k][i].setText(
-							(new Integer(lescores[k][i])).toString());
+								(new Integer(lescores[k][i])).toString());
 				}
 				for (int i = 0; i < 21; i++) {
 					if (((int[]) ((HashMap) le.getScore())
-						.get(bowlers.get(k)))[i]
-						!= -1)
-						if (((int[]) ((HashMap) le.getScore())
 							.get(bowlers.get(k)))[i]
-							== 10
-							&& (i % 2 == 0 || i == 19))
+							!= -1)
+						if (((int[]) ((HashMap) le.getScore())
+								.get(bowlers.get(k)))[i]
+								== 10
+								&& (i % 2 == 0 || i == 19))
 							ballLabel[k][i].setText("X");
 						else if (
-							i > 0
-								&& ((int[]) ((HashMap) le.getScore())
-									.get(bowlers.get(k)))[i]
-									+ ((int[]) ((HashMap) le.getScore())
+								i > 0
+										&& ((int[]) ((HashMap) le.getScore())
+										.get(bowlers.get(k)))[i]
+										+ ((int[]) ((HashMap) le.getScore())
 										.get(bowlers.get(k)))[i
-									- 1]
-									== 10
-								&& i % 2 == 1)
+										- 1]
+										== 10
+										&& i % 2 == 1)
 							ballLabel[k][i].setText("/");
-						else if ( ((int[])((HashMap) le.getScore()).get(bowlers.get(k)))[i] == -2 ){
-							
+						else if (((int[]) ((HashMap) le.getScore()).get(bowlers.get(k)))[i] == -2) {
+
 							ballLabel[k][i].setText("F");
 						} else
 							ballLabel[k][i].setText(
-								(new Integer(((int[]) ((HashMap) le.getScore())
-									.get(bowlers.get(k)))[i]))
-									.toString());
+									(new Integer(((int[]) ((HashMap) le.getScore())
+											.get(bowlers.get(k)))[i]))
+											.toString());
 				}
 			}
 
@@ -211,4 +209,13 @@ public class LaneView implements LaneObserver, ActionListener {
 		}
 	}
 
+	@Override
+	public void receiveEvent(PinsetterEvent pe) {
+
+	}
+
+	@Override
+	public void receiveEvent(ControlDeskEvent ce) {
+	}
 }
+

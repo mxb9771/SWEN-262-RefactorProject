@@ -44,7 +44,7 @@ import Model.Bowler;
 import Model.Lane;
 import Model.Party;
 import Model.Queue;
-import View.ControlDeskObserver;
+import View.Observer;
 
 import java.util.*;
 import java.io.*;
@@ -226,9 +226,9 @@ public class ControlDesk extends Thread {
 		Iterator eventIterator = subscribers.iterator();
 		while (eventIterator.hasNext()) {
 			(
-				(ControlDeskObserver) eventIterator
+				(Observer) eventIterator
 					.next())
-					.receiveControlDeskEvent(
+					.receiveEvent(
 				event);
 		}
 	}

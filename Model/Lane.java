@@ -131,6 +131,7 @@ package Model;
  * 
  */
 
+import Control.ControlDeskEvent;
 import Control.ScoreHistoryFile;
 import View.*;
 
@@ -139,7 +140,7 @@ import java.util.Iterator;
 import java.util.HashMap;
 import java.util.Date;
 
-public class Lane extends Thread implements PinsetterObserver{
+public class Lane extends Thread implements Observer{
 	private Party party;
 	private Pinsetter setter;
 	private HashMap scores;
@@ -294,7 +295,7 @@ public class Lane extends Thread implements PinsetterObserver{
 	 * 
 	 * @param pe 		The pinsetter event that has been received.
 	 */
-	public void receivePinsetterEvent(PinsetterEvent pe) {
+	public void receiveEvent(PinsetterEvent pe) {
 		
 			if (pe.pinsDownOnThisThrow() >=  0) {			// this is a real throw
 				markScore(currentThrower, frameNumber + 1, pe.getThrowNumber(), pe.pinsDownOnThisThrow());
@@ -332,7 +333,17 @@ public class Lane extends Thread implements PinsetterObserver{
 			} else {								//  this is not a real throw, probably a reset
 			}
 	}
-	
+
+	@Override
+	public void receiveEvent(ControlDeskEvent ce) {
+
+	}
+
+	@Override
+	public void receiveEvent(LaneEvent le) {
+
+	}
+
 	/** resetBowlerIterator()
 	 * 
 	 * sets the current bower iterator back to the first bowler
@@ -563,7 +574,7 @@ public class Lane extends Thread implements PinsetterObserver{
 	 * @param adding	Observer that is to be added
 	 */
 
-	public void subscribe( LaneObserver adding ) {
+	public void subscribe( Observer adding ) {
 		subscribers.add( adding );
 	}
 
@@ -574,7 +585,7 @@ public class Lane extends Thread implements PinsetterObserver{
 	 * @param removing	The observer to be removed
 	 */
 	
-	public void unsubscribe( LaneObserver removing ) {
+	public void unsubscribe( Observer removing ) {
 		subscribers.remove( removing );
 	}
 
@@ -590,7 +601,7 @@ public class Lane extends Thread implements PinsetterObserver{
 			Iterator eventIterator = subscribers.iterator();
 			
 			while ( eventIterator.hasNext() ) {
-				( (LaneObserver) eventIterator.next()).receiveLaneEvent( event );
+				( (Observer) eventIterator.next()).receiveEvent( event );
 			}
 		}
 	}

@@ -6,13 +6,14 @@ package View; /**
  * Window>Preferences>Java>Code Generation.
  */
 
+import Control.ControlDeskEvent;
 import Model.*;
 
 import java.awt.*;
 import java.awt.event.*;
 import javax.swing.*;
 
-public class LaneStatusView implements ActionListener, LaneObserver, PinsetterObserver {
+public class LaneStatusView implements ActionListener, Observer{
 
 	private JPanel jp;
 
@@ -132,7 +133,7 @@ public class LaneStatusView implements ActionListener, LaneObserver, PinsetterOb
 		}
 	}
 
-	public void receiveLaneEvent(LaneEvent le) {
+	public void receiveEvent(LaneEvent le) {
 		curBowler.setText( ( (Bowler)le.getBowler()).getNickName() );
 		if ( le.isMechanicalProblem() ) {
 			maintenance.setBackground( Color.RED );
@@ -146,10 +147,14 @@ public class LaneStatusView implements ActionListener, LaneObserver, PinsetterOb
 		}
 	}
 
-	public void receivePinsetterEvent(PinsetterEvent pe) {
+	public void receiveEvent(PinsetterEvent pe) {
 		pinsDown.setText( ( new Integer(pe.totalPinsDown()) ).toString() );
 //		foul.setText( ( new Boolean(pe.isFoulCommited()) ).toString() );
 		
 	}
 
+	@Override
+	public void receiveEvent(ControlDeskEvent ce) {
+
+	}
 }

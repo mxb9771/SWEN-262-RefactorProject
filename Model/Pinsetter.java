@@ -70,7 +70,7 @@ package Model;/*
  *
  */
 
-import View.PinsetterObserver;
+import View.Observer;
 
 import java.util.*;
 
@@ -101,7 +101,7 @@ public class Pinsetter {
 	 * */
 	private void sendEvent(int jdpins) {	// send events when our state is changd
 		for (int i=0; i < subscribers.size(); i++) {
-			((PinsetterObserver)subscribers.get(i)).receivePinsetterEvent(
+			((Observer)subscribers.get(i)).receiveEvent(
 				new PinsetterEvent(pins, foul, throwNumber, jdpins));
 		}
 	}
@@ -196,7 +196,7 @@ public class Pinsetter {
 	 * @pre none
 	 * @post the subscriber object will recieve events when their generated
 	 */
-	public void subscribe(PinsetterObserver subscriber) {
+	public void subscribe(Observer subscriber) {
 		subscribers.add(subscriber);
 	}
 

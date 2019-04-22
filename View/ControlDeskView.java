@@ -16,7 +16,9 @@ package View;/* View.ControlDeskView.java
 import Control.ControlDesk;
 import Control.ControlDeskEvent;
 import Model.Lane;
+import Model.LaneEvent;
 import Model.Pinsetter;
+import Model.PinsetterEvent;
 
 import java.awt.*;
 import java.awt.event.*;
@@ -25,7 +27,7 @@ import javax.swing.border.*;
 
 import java.util.*;
 
-public class ControlDeskView implements ActionListener, ControlDeskObserver {
+public class ControlDeskView implements ActionListener, Observer {
 
 	private JButton addParty, finished, assign;
 	private JFrame win;
@@ -171,6 +173,11 @@ public class ControlDeskView implements ActionListener, ControlDeskObserver {
 		controlDesk.addPartyQueue(addPartyView.getParty());
 	}
 
+	@Override
+	public void receiveEvent(PinsetterEvent pe) {
+
+	}
+
 	/**
 	 * Receive a broadcast from a Control.ControlDesk
 	 *
@@ -178,7 +185,12 @@ public class ControlDeskView implements ActionListener, ControlDeskObserver {
 	 *
 	 */
 
-	public void receiveControlDeskEvent(ControlDeskEvent ce) {
+	public void receiveEvent(ControlDeskEvent ce) {
 		partyList.setListData(((Vector) ce.getPartyQueue()));
+	}
+
+	@Override
+	public void receiveEvent(LaneEvent le) {
+
 	}
 }
