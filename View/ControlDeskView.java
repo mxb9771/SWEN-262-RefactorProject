@@ -31,7 +31,7 @@ public class ControlDeskView implements ActionListener, Observer {
 
 	private JButton addParty, finished, assign;
 	private JFrame win;
-	private JList partyList;
+	private JList<Object> partyList;
 	
 	/** The maximum  number of members in a party */
 	private int maxMembers;
@@ -52,7 +52,7 @@ public class ControlDeskView implements ActionListener, Observer {
 
 	}
 
-	public void createWindow(){
+	private void createWindow(){
 		win = new JFrame("Control Desk");
 		win.getContentPane().setLayout(new BorderLayout());
 		((JPanel) win.getContentPane()).setOpaque(false);
@@ -75,12 +75,7 @@ public class ControlDeskView implements ActionListener, Observer {
 				((screenSize.height) / 2) - ((win.getSize().height) / 2));
 	}
 
-	public JPanel createColPanel(){
-		int numLanes = controlDesk.getNumLanes();
-
-
-		JPanel colPanel = new JPanel();
-		colPanel.setLayout(new BorderLayout());
+	private JPanel initializePanel(){
 
 		// Controls Panel
 		JPanel controlsPanel = new JPanel();
@@ -99,7 +94,6 @@ public class ControlDeskView implements ActionListener, Observer {
 		assignPanel.setLayout(new FlowLayout());
 		assign.addActionListener(this);
 		assignPanel.add(assign);
-//		controlsPanel.add(assignPanel);
 
 		finished = new JButton("Finished");
 		JPanel finishedPanel = new JPanel();
@@ -108,7 +102,15 @@ public class ControlDeskView implements ActionListener, Observer {
 		finishedPanel.add(finished);
 		controlsPanel.add(finishedPanel);
 
-		// Model.Lane Status Panel
+		return controlsPanel;
+	}
+
+	public JPanel createColPanel(){
+		int numLanes = controlDesk.getNumLanes();
+		JPanel colPanel = new JPanel();
+		colPanel.setLayout(new BorderLayout());
+		JPanel controlsPanel = initializePanel();
+
 		JPanel laneStatusPanel = new JPanel();
 		laneStatusPanel.setLayout(new GridLayout(numLanes, 1));
 		laneStatusPanel.setBorder(new TitledBorder("Lane Status"));
@@ -131,10 +133,10 @@ public class ControlDeskView implements ActionListener, Observer {
 		partyPanel.setLayout(new FlowLayout());
 		partyPanel.setBorder(new TitledBorder("Party Queue"));
 
-		Vector empty = new Vector();
+		Vector<String> empty = new Vector<>();
 		empty.add("(Empty)");
 
-		partyList = new JList(empty);
+		partyList = new JList<Object>(empty);
 		partyList.setFixedCellWidth(120);
 		partyList.setVisibleRowCount(10);
 		JScrollPane partyPane = new JScrollPane(partyList);

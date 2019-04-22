@@ -16,7 +16,7 @@ public class ScoreHistoryFile {
 	private static String SCOREHISTORY_DAT = "SCOREHISTORY.DAT";
 
 	public static void addScore(String nick, String date, String score)
-		throws IOException, FileNotFoundException {
+		throws IOException {
 
 		String data = nick + "\t" + date + "\t" + score + "\n";
 
