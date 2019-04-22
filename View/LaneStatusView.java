@@ -15,7 +15,7 @@ import java.awt.*;
 import java.awt.event.*;
 import javax.swing.*;
 
-public class LaneStatusView implements ActionListener, Observer{
+public class LaneStatusView implements ActionListener, Observer, View{
 
 	private JPanel jp;
 
@@ -45,39 +45,16 @@ public class LaneStatusView implements ActionListener, Observer{
 		lv = new LaneView( lane, laneNum );
 		lane.subscribe(lv);
 
-		createView();
+		initialize();
 
 	}
 
-	private void createView(){
 
-		jp = new JPanel();
-		jp.setLayout(new FlowLayout());
-		JLabel cLabel = new JLabel( "Now Bowling: " );
-		curBowler = new JLabel( "(no one)" );
-        new JLabel("Foul: ");
-        new JLabel(" ");
-		JLabel pdLabel = new JLabel( "Pins Down: " );
-		pinsDown = new JLabel( "0" );
-
-		// Button Panel
-		JPanel buttonPanel = setupButtons();
-
-		jp.add( cLabel );
-		jp.add( curBowler );
-		jp.add( pdLabel );
-		jp.add( pinsDown );
-
-		jp.add(buttonPanel);
-
-
-	}
-
-	private JPanel setupButtons(){
+	public JPanel setupButtons(){
 		JPanel buttonPanel = new JPanel();
 		buttonPanel.setLayout(new FlowLayout());
 
-		Insets buttonMargin = new Insets(4, 4, 4, 4);
+		new Insets(4, 4, 4, 4);
 
 		viewLane = new JButton("View Lane");
 		JPanel viewLanePanel = new JPanel();
@@ -106,6 +83,30 @@ public class LaneStatusView implements ActionListener, Observer{
 		buttonPanel.add(viewPinSetterPanel);
 		buttonPanel.add(maintenancePanel);
 		return buttonPanel;
+	}
+
+	@Override
+	public void initialize() {
+
+		jp = new JPanel();
+		jp.setLayout(new FlowLayout());
+		JLabel cLabel = new JLabel( "Now Bowling: " );
+		curBowler = new JLabel( "(no one)" );
+		new JLabel("Foul: ");
+		new JLabel(" ");
+		JLabel pdLabel = new JLabel( "Pins Down: " );
+		pinsDown = new JLabel( "0" );
+
+		// Button Panel
+		JPanel buttonPanel = setupButtons();
+
+		jp.add( cLabel );
+		jp.add( curBowler );
+		jp.add( pdLabel );
+		jp.add( pinsDown );
+
+		jp.add(buttonPanel);
+
 	}
 
 	public JPanel showLane() {

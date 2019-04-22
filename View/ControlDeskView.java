@@ -27,7 +27,7 @@ import javax.swing.border.*;
 
 import java.util.*;
 
-public class ControlDeskView implements ActionListener, Observer {
+public class ControlDeskView implements ActionListener, Observer, View {
 
 	private JButton addParty, finished, assign;
 	private JFrame win;
@@ -47,12 +47,12 @@ public class ControlDeskView implements ActionListener, Observer {
 
 		this.controlDesk = controlDesk;
 		this.maxMembers = maxMembers;
-		createWindow();
+		initialize();
 		win.show();
 
 	}
 
-	private void createWindow(){
+	public void initialize(){
 		win = new JFrame("Control Desk");
 		win.getContentPane().setLayout(new BorderLayout());
 		((JPanel) win.getContentPane()).setOpaque(false);
@@ -75,7 +75,7 @@ public class ControlDeskView implements ActionListener, Observer {
 				((screenSize.height) / 2) - ((win.getSize().height) / 2));
 	}
 
-	private JPanel initializePanel(){
+	public JPanel setupButtons(){
 
 		// Controls Panel
 		JPanel controlsPanel = new JPanel();
@@ -109,7 +109,7 @@ public class ControlDeskView implements ActionListener, Observer {
 		int numLanes = controlDesk.getNumLanes();
 		JPanel colPanel = new JPanel();
 		colPanel.setLayout(new BorderLayout());
-		JPanel controlsPanel = initializePanel();
+		JPanel controlsPanel = setupButtons();
 
 		JPanel laneStatusPanel = new JPanel();
 		laneStatusPanel.setLayout(new GridLayout(numLanes, 1));

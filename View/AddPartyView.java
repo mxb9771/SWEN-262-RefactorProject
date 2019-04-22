@@ -40,7 +40,7 @@ import java.util.*;
  *  
  */
 
-public class AddPartyView implements ActionListener, ListSelectionListener {
+public class AddPartyView implements ActionListener, ListSelectionListener, View {
 
 	private int maxSize;
 
@@ -61,10 +61,10 @@ public class AddPartyView implements ActionListener, ListSelectionListener {
 		this.controlDesk = controlDesk;
 		maxSize = max;
 
-		initailize();
+		initialize();
 	}
 
-	private JPanel setupButtons(){
+	public JPanel setupButtons(){
         JPanel buttonPanel = new JPanel();
         buttonPanel.setLayout(new GridLayout(4, 1));
 
@@ -102,7 +102,8 @@ public class AddPartyView implements ActionListener, ListSelectionListener {
         return buttonPanel;
     }
 
-    private void initailize(){
+
+    public void initialize(){
         win = new JFrame("Add Party");
         win.getContentPane().setLayout(new BorderLayout());
         ((JPanel) win.getContentPane()).setOpaque(false);
