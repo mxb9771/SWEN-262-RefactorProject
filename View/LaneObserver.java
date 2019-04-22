@@ -1,7 +1,7 @@
 package View;/* $Id$
  *
  * Revisions:
- *   $Log: src.View.LaneObserver.java,v $
+ *   $Log: View.LaneObserver.java,v $
  *   Revision 1.2  2003/01/30 21:44:25  ???
  *   Fixed speling of received in may places.
  *

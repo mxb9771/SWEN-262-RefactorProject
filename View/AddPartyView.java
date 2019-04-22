@@ -1,10 +1,10 @@
-package View;/* src.View.AddPartyView.java
+package View;/* View.AddPartyView.java
  *
  *  Version:
  * 		 $Id$
  * 
  *  Revisions:
- * 		$Log: src.View.AddPartyView.java,v $
+ * 		$Log: View.AddPartyView.java,v $
  * 		Revision 1.7  2003/02/20 02:05:53  ???
  * 		Fixed addPatron so that duplicates won't be created.
  * 		
@@ -15,7 +15,7 @@ package View;/* src.View.AddPartyView.java
  * 		Made updates to migrate to observer model.
  * 		
  * 		Revision 1.4  2003/02/02 16:29:52  ???
- * 		Added src.Control.ControlDeskEvent and src.View.ControlDeskObserver. Updated src.Model.Queue to allow access to Vector so that contents could be viewed without destroying. Implemented observer model for most of src.Control.ControlDesk.
+ * 		Added Control.ControlDeskEvent and View.ControlDeskObserver. Updated Model.Queue to allow access to Vector so that contents could be viewed without destroying. Implemented observer model for most of Control.ControlDesk.
  * 		
  * 
  */
@@ -66,7 +66,7 @@ public class AddPartyView implements ActionListener, ListSelectionListener {
 		JPanel colPanel = new JPanel();
 		colPanel.setLayout(new GridLayout(1, 3));
 
-		// src.Model.Party Panel
+		// Model.Party Panel
 		JPanel partyPanel = new JPanel();
 		partyPanel.setLayout(new FlowLayout());
 		partyPanel.setBorder(new TitledBorder("Your Party"));
@@ -83,7 +83,7 @@ public class AddPartyView implements ActionListener, ListSelectionListener {
 		//        partyPane.setVerticalScrollBarPolicy(JScrollPane.VERTICAL_SCROLLBAR_ALWAYS);
 		partyPanel.add(partyPane);
 
-		// src.Model.Bowler Database
+		// Model.Bowler Database
 		JPanel bowlerPanel = new JPanel();
 		bowlerPanel.setLayout(new FlowLayout());
 		bowlerPanel.setBorder(new TitledBorder("Bowler Database"));
@@ -202,7 +202,7 @@ public class AddPartyView implements ActionListener, ListSelectionListener {
 	}
 
 /**
- * Accessor for src.Model.Party
+ * Accessor for Model.Party
  */
 
 	public Vector getNames() {
@@ -210,9 +210,9 @@ public class AddPartyView implements ActionListener, ListSelectionListener {
 	}
 
 /**
- * Called by src.View.NewPatronView to notify src.View.AddPartyView to update
+ * Called by View.NewPatronView to notify View.AddPartyView to update
  * 
- * @param newPatron the src.View.NewPatronView that called this method
+ * @param newPatron the View.NewPatronView that called this method
  */
 
 	public void updateNewPatron(NewPatronView newPatron) {
@@ -228,7 +228,7 @@ public class AddPartyView implements ActionListener, ListSelectionListener {
 				party.add(newPatron.getNick());
 				partyList.setListData(party);
 			} else {
-				System.err.println( "A src.Model.Bowler with that name already exists." );
+				System.err.println( "A Model.Bowler with that name already exists." );
 			}
 		} catch (Exception e2) {
 			System.err.println("File I/O Error");
@@ -236,7 +236,7 @@ public class AddPartyView implements ActionListener, ListSelectionListener {
 	}
 
 /**
- * Accessor for src.Model.Party
+ * Accessor for Model.Party
  */
 
 	public Vector getParty() {

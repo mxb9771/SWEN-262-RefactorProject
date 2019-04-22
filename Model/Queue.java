@@ -1,4 +1,4 @@
-package Model;/* src.Model.Queue.java
+package Model;/* Model.Queue.java
  *
  *  Version
  *  $Id$
@@ -13,7 +13,7 @@ import java.util.Vector;
 public class Queue {
 	private Vector v;
 	
-	/** src.Model.Queue()
+	/** Model.Queue()
 	 * 
 	 * creates a new queue
 	 */

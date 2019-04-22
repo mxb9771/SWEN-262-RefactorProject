@@ -1,11 +1,11 @@
 package Model;/*
- * src.Model.Pinsetter.java
+ * Model.Pinsetter.java
  *
  * Version:
  *   $Id$
  *
  * Revisions:
- *   $Log: src.Model.Pinsetter.java,v $
+ *   $Log: Model.Pinsetter.java,v $
  *   Revision 1.21  2003/02/20 20:27:45  ???
  *   Fouls disables.
  *
@@ -25,10 +25,10 @@ package Model;/*
  *   Better random numbers.
  *
  *   Revision 1.15  2003/02/02 23:49:48  ???
- *   src.Model.Pinsetter generates an event when all pins are reset
+ *   Model.Pinsetter generates an event when all pins are reset
  *
  *   Revision 1.14  2003/02/02 23:26:32  ???
- *   src.Control.ControlDesk now runs its own thread and polls for free lanes to assign queue members to
+ *   Control.ControlDesk now runs its own thread and polls for free lanes to assign queue members to
  *
  *   Revision 1.13  2003/02/02 23:21:30  ???
  *   pinsetter should give better results
@@ -47,7 +47,7 @@ package Model;/*
  *
  *   Revision 1.8  2003/01/26 22:34:44  ???
  *   Total rewrite of lane and pinsetter for R2's observer model
- *   Added src.Model.Lane/src.Model.Pinsetter Observer
+ *   Added Model.Lane/Model.Pinsetter Observer
  *   Rewrite of scoring algorythm in lane
  *
  *   Revision 1.7  2003/01/19 21:55:24  ???
@@ -106,13 +106,13 @@ public class Pinsetter {
 		}
 	}
 
-	/** src.Model.Pinsetter()
+	/** Model.Pinsetter()
 	 * 
 	 * Constructs a new pinsetter
 	 * 
 	 * @pre none
 	 * @post a new pinsetter is created
-	 * @return src.Model.Pinsetter object
+	 * @return Model.Pinsetter object
 	 */
 	public Pinsetter() {
 		pins = new boolean[10];

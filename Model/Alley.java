@@ -1,12 +1,12 @@
 package Model;/*
 
- * src.Model.Alley.java
+ * Model.Alley.java
  *
  * Version:
  *   $Id$
  *
  * Revisions:
- *   $Log: src.Model.Alley.java,v $
+ *   $Log: Model.Alley.java,v $
  *   Revision 1.4  2003/02/02 20:28:58  ???
  *   fixed sleep thread bug in lane
  *
@@ -17,7 +17,7 @@ package Model;/*
  *   *** empty log message ***
  *
  *   Revision 1.1  2003/01/12 19:09:12  ???
- *   Adding src.Model.Party, src.Model.Lane, src.Model.Bowler, and src.Model.Alley.
+ *   Adding Model.Party, Model.Lane, Model.Bowler, and Model.Alley.
  *
  */
 

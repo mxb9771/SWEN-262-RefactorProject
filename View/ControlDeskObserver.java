@@ -1,4 +1,4 @@
-package View;/* src.View.ControlDeskObserver.java
+package View;/* View.ControlDeskObserver.java
  *
  *  Version
  *  $Id$

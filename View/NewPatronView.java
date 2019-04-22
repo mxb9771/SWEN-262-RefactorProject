@@ -1,12 +1,12 @@
-package View;/* src.View.AddPartyView.java
+package View;/* View.AddPartyView.java
  *
  *  Version
  *  $Id$
  * 
  *  Revisions:
- * 		$Log: src.View.NewPatronView.java,v $
+ * 		$Log: View.NewPatronView.java,v $
  * 		Revision 1.3  2003/02/02 16:29:52  ???
- * 		Added src.Control.ControlDeskEvent and src.View.ControlDeskObserver. Updated src.Model.Queue to allow access to Vector so that contents could be viewed without destroying. Implemented observer model for most of src.Control.ControlDesk.
+ * 		Added Control.ControlDeskEvent and View.ControlDeskObserver. Updated Model.Queue to allow access to Vector so that contents could be viewed without destroying. Implemented observer model for most of Control.ControlDesk.
  * 		
  * 
  */

@@ -1,4 +1,4 @@
-package View;/* src.View.ControlDeskView.java
+package View;/* View.ControlDeskView.java
  *
  *  Version:
  *			$Id$
@@ -80,7 +80,7 @@ public class ControlDeskView implements ActionListener, ControlDeskObserver {
 		finishedPanel.add(finished);
 		controlsPanel.add(finishedPanel);
 
-		// src.Model.Lane Status Panel
+		// Model.Lane Status Panel
 		JPanel laneStatusPanel = new JPanel();
 		laneStatusPanel.setLayout(new GridLayout(numLanes, 1));
 		laneStatusPanel.setBorder(new TitledBorder("Lane Status"));
@@ -98,7 +98,7 @@ public class ControlDeskView implements ActionListener, ControlDeskObserver {
 			laneStatusPanel.add(lanePanel);
 		}
 
-		// src.Model.Party src.Model.Queue Panel
+		// Model.Party Model.Queue Panel
 		JPanel partyPanel = new JPanel();
 		partyPanel.setLayout(new FlowLayout());
 		partyPanel.setBorder(new TitledBorder("Party Queue"));
@@ -172,9 +172,9 @@ public class ControlDeskView implements ActionListener, ControlDeskObserver {
 	}
 
 	/**
-	 * Receive a broadcast from a src.Control.ControlDesk
+	 * Receive a broadcast from a Control.ControlDesk
 	 *
-	 * @param ce	the src.Control.ControlDeskEvent that triggered the handler
+	 * @param ce	the Control.ControlDeskEvent that triggered the handler
 	 *
 	 */
 

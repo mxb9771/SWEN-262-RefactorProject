@@ -1,5 +1,5 @@
 package View;/*
- * src.View.PinSetterView/.java
+ * View.PinSetterView/.java
  *
  * Version:
  *   $Id$

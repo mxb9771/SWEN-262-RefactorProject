@@ -1,10 +1,10 @@
 package Model;/*  $Id$
  *
  *  Revisions:
- *    $Log: src.Model.PinsetterEvent.java,v $
+ *    $Log: Model.PinsetterEvent.java,v $
  *    Revision 1.2  2003/01/26 22:34:44  ???
  *    Total rewrite of lane and pinsetter for R2's observer model
- *    Added src.Model.Lane/src.Model.Pinsetter Observer
+ *    Added Model.Lane/Model.Pinsetter Observer
  *    Rewrite of scoring algorythm in lane
  *
  *    Revision 1.1  2003/01/19 21:04:24  ???
@@ -19,7 +19,7 @@ public class PinsetterEvent {
 	private int throwNumber;
 	private int pinsDownThisThrow;
 
-	/** src.Model.PinsetterEvent()
+	/** Model.PinsetterEvent()
 	 * 
 	 * creates a new pinsetter event
 	 * 

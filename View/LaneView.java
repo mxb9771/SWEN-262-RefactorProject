@@ -1,5 +1,5 @@
 package View;/*
- *  constructs a prototype src.Model.Lane src.View
+ *  constructs a prototype Model.Lane View
  *
  */
 

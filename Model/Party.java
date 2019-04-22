@@ -1,11 +1,11 @@
 package Model;/*
- * src.Model.Party.java
+ * Model.Party.java
  *
  * Version:
  *   $Id$
  *
  * Revisions:
- *   $Log: src.Model.Party.java,v $
+ *   $Log: Model.Party.java,v $
  *   Revision 1.3  2003/02/09 21:21:31  ???
  *   Added lots of comments
  *
@@ -13,7 +13,7 @@ package Model;/*
  *   *** empty log message ***
  *
  *   Revision 1.1  2003/01/12 19:09:12  ???
- *   Adding src.Model.Party, src.Model.Lane, src.Model.Bowler, and src.Model.Alley.
+ *   Adding Model.Party, Model.Lane, Model.Bowler, and Model.Alley.
  *
  */
 
@@ -30,7 +30,7 @@ public class Party {
     private Vector myBowlers;
 	
 	/**
-	 * Constructor for a src.Model.Party
+	 * Constructor for a Model.Party
 	 * 
 	 * @param bowlers	Vector of bowlers that are in this party
 	 */
