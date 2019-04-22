@@ -3,17 +3,14 @@ package View;/*
  *
  */
 
-import Model.Bowler;
-import Model.Lane;
-import Model.LaneEvent;
-import Model.Party;
-
+import Control.ControlDeskEvent;
+import Model.*;
 import java.awt.*;
 import java.awt.event.*;
 import javax.swing.*;
 import java.util.*;
 
-public class LaneView implements LaneObserver, ActionListener {
+public class LaneView implements Observer, ActionListener {
 
 	private int roll;
 	private boolean initDone = true;
@@ -127,7 +124,8 @@ public class LaneView implements LaneObserver, ActionListener {
 		return panel;
 	}
 
-	public void receiveLaneEvent(LaneEvent le) {
+	@Override
+	public void receiveEvent(LaneEvent le) {
 		if (lane.isPartyAssigned()) {
 			int numBowlers = le.getParty().getMembers().size();
 			while (!initDone) {
@@ -205,10 +203,19 @@ public class LaneView implements LaneObserver, ActionListener {
 		}
 	}
 
+	@Override
+	public void receiveEvent(PinsetterEvent pinsetterEvent) {
+
+	}
+
+	@Override
+	public void receiveEvent(ControlDeskEvent controlDeskEvent) {
+
+	}
+
 	public void actionPerformed(ActionEvent e) {
 		if (e.getSource().equals(maintenance)) {
 			lane.pauseGame();
 		}
 	}
-
 }

@@ -15,9 +15,7 @@ package View;/* View.ControlDeskView.java
 
 import Control.ControlDesk;
 import Control.ControlDeskEvent;
-import Model.Lane;
-import Model.Pinsetter;
-
+import Model.*;
 import java.awt.*;
 import java.awt.event.*;
 import javax.swing.*;
@@ -25,11 +23,11 @@ import javax.swing.border.*;
 
 import java.util.*;
 
-public class ControlDeskView implements ActionListener, ControlDeskObserver {
+public class ControlDeskView implements ActionListener, Observer {
 
 	private JButton addParty, finished, assign;
 	private JFrame win;
-	private JList partyList;
+	private JList<Object> partyList;
 	
 	/** The maximum  number of members in a party */
 	private int maxMembers;
@@ -103,10 +101,10 @@ public class ControlDeskView implements ActionListener, ControlDeskObserver {
 		partyPanel.setLayout(new FlowLayout());
 		partyPanel.setBorder(new TitledBorder("Model.Party Model.Queue"));
 
-		Vector empty = new Vector();
+		Vector<String> empty = new Vector<>();
 		empty.add("(Empty)");
 
-		partyList = new JList(empty);
+		partyList = new JList<>(empty);
 		partyList.setFixedCellWidth(120);
 		partyList.setVisibleRowCount(10);
 		JScrollPane partyPane = new JScrollPane(partyList);
@@ -178,7 +176,19 @@ public class ControlDeskView implements ActionListener, ControlDeskObserver {
 	 *
 	 */
 
-	public void receiveControlDeskEvent(ControlDeskEvent ce) {
+	public void receiveEvent(ControlDeskEvent ce) {
 		partyList.setListData(((Vector) ce.getPartyQueue()));
 	}
+
+
+	@Override
+	public void receiveEvent(LaneEvent laneEvent) {
+
+	}
+
+	@Override
+	public void receiveEvent(PinsetterEvent pinsetterEvent) {
+
+	}
+
 }

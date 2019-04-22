@@ -13,9 +13,10 @@ package Control;/* Control.ControlDeskEvent.java
  *
  */
 
+
 import java.util.*;
 
-public class ControlDeskEvent {
+public class ControlDeskEvent{
 
 	/** A representation of the wait queue, containing party names */
 	private Vector partyQueue;
@@ -33,8 +34,7 @@ public class ControlDeskEvent {
 
     /**
      * Accessor for partyQueue
-     * @param key the key of the vertex being looked for.
-     *
+
      * @return a Vector of Strings representing the names of the parties in the wait queue
      *
      */

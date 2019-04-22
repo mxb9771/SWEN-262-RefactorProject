@@ -28,7 +28,7 @@ import Model.Party;
 
 import java.util.HashMap;
 
-public class LaneEvent {
+public class LaneEvent{
 
 	private Party p;
 	int frame;

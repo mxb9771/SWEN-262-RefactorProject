@@ -12,7 +12,9 @@ package Model;/*  $Id$
  *
  */
 
-public class PinsetterEvent {
+import jdk.jfr.Event;
+
+public class PinsetterEvent{
 
 	private boolean[] pinsStillStanding;
 	private boolean foulCommited;

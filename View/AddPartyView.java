@@ -15,7 +15,7 @@ package View;/* View.AddPartyView.java
  * 		Made updates to migrate to observer model.
  * 		
  * 		Revision 1.4  2003/02/02 16:29:52  ???
- * 		Added Control.ControlDeskEvent and View.ControlDeskObserver. Updated Model.Queue to allow access to Vector so that contents could be viewed without destroying. Implemented observer model for most of Control.ControlDesk.
+ * 		Added Control.ControlDeskEvent and View.Observer. Updated Model.Queue to allow access to Vector so that contents could be viewed without destroying. Implemented observer model for most of Control.ControlDesk.
  * 		
  * 
  */
@@ -46,8 +46,10 @@ public class AddPartyView implements ActionListener, ListSelectionListener {
 
 	private JFrame win;
 	private JButton addPatron, newPatron, remPatron, finished;
-	private JList partyList, allBowlers;
-	private Vector party, bowlerdb;
+	private JList<String> partyList;
+	private JList<Object> allBowlers;
+	private Vector<String> party;
+	private Vector<Object> bowlerdb;
 	private Integer lock;
 
 	private ControlDeskView controlDesk;
@@ -71,11 +73,11 @@ public class AddPartyView implements ActionListener, ListSelectionListener {
 		partyPanel.setLayout(new FlowLayout());
 		partyPanel.setBorder(new TitledBorder("Your Model.Party"));
 
-		party = new Vector();
-		Vector empty = new Vector();
+		party = new Vector<String>();
+		Vector<String> empty = new Vector<>();
 		empty.add("(Empty)");
 
-		partyList = new JList(empty);
+		partyList = new JList<String>(empty);
 		partyList.setFixedCellWidth(120);
 		partyList.setVisibleRowCount(5);
 		partyList.addListSelectionListener(this);
@@ -89,12 +91,12 @@ public class AddPartyView implements ActionListener, ListSelectionListener {
 		bowlerPanel.setBorder(new TitledBorder("Model.Bowler Database"));
 
 		try {
-			bowlerdb = new Vector(BowlerFile.getBowlers());
+			bowlerdb = new Vector<Object>(BowlerFile.getBowlers());
 		} catch (Exception e) {
 			System.err.println("File Error");
-			bowlerdb = new Vector();
+			bowlerdb = new Vector<>();
 		}
-		allBowlers = new JList(bowlerdb);
+		allBowlers = new JList<>(bowlerdb);
 		allBowlers.setVisibleRowCount(8);
 		allBowlers.setFixedCellWidth(120);
 		JScrollPane bowlerPane = new JScrollPane(allBowlers);
@@ -205,7 +207,7 @@ public class AddPartyView implements ActionListener, ListSelectionListener {
  * Accessor for Model.Party
  */
 
-	public Vector getNames() {
+	public Vector<String> getNames() {
 		return party;
 	}
 
@@ -223,7 +225,7 @@ public class AddPartyView implements ActionListener, ListSelectionListener {
 					newPatron.getNick(),
 					newPatron.getFull(),
 					newPatron.getEmail());
-				bowlerdb = new Vector(BowlerFile.getBowlers());
+				bowlerdb = new Vector<Object>(BowlerFile.getBowlers());
 				allBowlers.setListData(bowlerdb);
 				party.add(newPatron.getNick());
 				partyList.setListData(party);
@@ -239,7 +241,7 @@ public class AddPartyView implements ActionListener, ListSelectionListener {
  * Accessor for Model.Party
  */
 
-	public Vector getParty() {
+	public Vector<String> getParty() {
 		return party;
 	}
 
