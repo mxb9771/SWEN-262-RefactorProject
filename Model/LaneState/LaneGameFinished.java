@@ -14,7 +14,8 @@ import java.util.HashMap;
 import java.util.Iterator;
 import java.util.Vector;
 
-public class LaneOccupied extends Thread implements Observer, LaneStatusState {
+
+public class LaneGameFinished extends Thread implements LaneStatusState, Observer{
 
     private Party party;
     private Pinsetter setter;
@@ -47,7 +48,7 @@ public class LaneOccupied extends Thread implements Observer, LaneStatusState {
      * @pre none
      * @post a new lane has been created and its thered is executing
      */
-    public LaneOccupied() {
+    public LaneGameFinished() {
         setter = new Pinsetter();
         scores = new HashMap();
         subscribers = new Vector();
@@ -468,3 +469,4 @@ public class LaneOccupied extends Thread implements Observer, LaneStatusState {
         publish(lanePublish());
     }
 }
+

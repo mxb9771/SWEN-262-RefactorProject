@@ -16,7 +16,7 @@ package Model;
  *   Works beautifully.
  *
  *   Revision 1.48  2003/02/20 04:10:58  ???
- *   Model.Score reporting code should be good.
+ *   Model.Controller reporting code should be good.
  *
  *   Revision 1.47  2003/02/17 00:25:28  ???
  *   Added disbale controls for View objects.
@@ -46,7 +46,7 @@ package Model;
  *   added mechnanical problem flag
  *
  *   Revision 1.36  2003/02/16 21:31:04  ???
- *   Model.Score logging.
+ *   Model.Controller logging.
  *
  *   Revision 1.35  2003/02/09 21:38:00  ???
  *   Added lots of comments
