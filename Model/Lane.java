@@ -139,7 +139,7 @@ import java.util.Iterator;
 import java.util.HashMap;
 import java.util.Date;
 
-public class Lane extends Thread implements PinsetterObserver, LaneGameStatus {
+public class Lane extends Thread implements PinsetterObserver{
 	private Party party;
 	private Pinsetter setter;
 	private HashMap scores;
