@@ -193,7 +193,7 @@ public class Lane extends Thread implements PinsetterObserver, LaneGameStatus {
 	public void run() {
 		
 		while (true) {
-			if (partyAssigned && !gameFinished) {	// we have a party on this lane, 
+			if (partyAssigned && !gameFinished) {	// we have a party on this lane,
 								// so next bower can take a throw
 			
 				while (gameIsHalted) {
@@ -252,7 +252,7 @@ public class Lane extends Thread implements PinsetterObserver, LaneGameStatus {
 					
 				} else if (result == 2) {// no, dont want to play another game
 					Vector printVector;	
-					EndGameReport egr = new EndGameReport( ((Bowler)party.getMembers().get(0)).getNickName() + "'s Model.Party", party);
+					EndGameReport egr = new EndGameReport( ((Bowler)party.getMembers().get(0)).getNickName() + "'s Party", party);
 					printVector = egr.getResult();
 					partyAssigned = false;
 					Iterator scoreIt = party.getMembers().iterator();

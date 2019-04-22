@@ -70,9 +70,10 @@ public class ControlDesk extends Thread {
      *
      */
 
-	public ControlDesk(int numLanes) {
+	public ControlDesk ( int numLanes ) {
+
 		this.numLanes = numLanes;
-		lanes = new HashSet(numLanes);
+		lanes = new HashSet( numLanes );
 		partyQueue = new Queue();
 
 		subscribers = new Vector();
@@ -90,6 +91,7 @@ public class ControlDesk extends Thread {
 	 * 
 	 */
 	public void run() {
+
 		while (true) {
 			
 			assignLane();
@@ -98,6 +100,7 @@ public class ControlDesk extends Thread {
 				sleep(250);
 			} catch (Exception e) {}
 		}
+
 	}
 		
 
