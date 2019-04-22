@@ -17,24 +17,23 @@ public class LaneStatusView implements ActionListener, Observer{
 
 	private JPanel jp;
 
-	private JLabel curBowler, foul, pinsDown;
+	private JLabel curBowler;
+    private JLabel pinsDown;
 	private JButton viewLane;
 	private JButton viewPinSetter, maintenance;
 
 	private PinSetterView psv;
 	private LaneView lv;
 	private Lane lane;
-	int laneNum;
 
-	boolean laneShowing;
-	boolean psShowing;
+    private boolean laneShowing;
+	private boolean psShowing;
 
 	public LaneStatusView(Lane lane, int laneNum ) {
 
 		this.lane = lane;
-		this.laneNum = laneNum;
 
-		laneShowing=false;
+        laneShowing=false;
 		psShowing=false;
 
 		psv = new PinSetterView( laneNum );
@@ -44,17 +43,35 @@ public class LaneStatusView implements ActionListener, Observer{
 		lv = new LaneView( lane, laneNum );
 		lane.subscribe(lv);
 
+		createView();
+
+	}
+
+	private void createView(){
 
 		jp = new JPanel();
 		jp.setLayout(new FlowLayout());
 		JLabel cLabel = new JLabel( "Now Bowling: " );
 		curBowler = new JLabel( "(no one)" );
-		JLabel fLabel = new JLabel( "Foul: " );
-		foul = new JLabel( " " );
+        new JLabel("Foul: ");
+        new JLabel(" ");
 		JLabel pdLabel = new JLabel( "Pins Down: " );
 		pinsDown = new JLabel( "0" );
 
 		// Button Panel
+		JPanel buttonPanel = setupButtons();
+
+		jp.add( cLabel );
+		jp.add( curBowler );
+		jp.add( pdLabel );
+		jp.add( pinsDown );
+
+		jp.add(buttonPanel);
+
+
+	}
+
+	private JPanel setupButtons(){
 		JPanel buttonPanel = new JPanel();
 		buttonPanel.setLayout(new FlowLayout());
 
@@ -86,16 +103,7 @@ public class LaneStatusView implements ActionListener, Observer{
 		buttonPanel.add(viewLanePanel);
 		buttonPanel.add(viewPinSetterPanel);
 		buttonPanel.add(maintenancePanel);
-
-		jp.add( cLabel );
-		jp.add( curBowler );
-//		jp.add( fLabel );
-//		jp.add( foul );
-		jp.add( pdLabel );
-		jp.add( pinsDown );
-		
-		jp.add(buttonPanel);
-
+		return buttonPanel;
 	}
 
 	public JPanel showLane() {
@@ -105,10 +113,10 @@ public class LaneStatusView implements ActionListener, Observer{
 	public void actionPerformed( ActionEvent e ) {
 		if ( lane.isPartyAssigned() ) { 
 			if (e.getSource().equals(viewPinSetter)) {
-				if ( psShowing == false ) {
+				if (!psShowing) {
 					psv.show();
 					psShowing=true;
-				} else if ( psShowing == true ) {
+				} else if (psShowing) {
 					psv.hide();
 					psShowing=false;
 				}
@@ -116,10 +124,10 @@ public class LaneStatusView implements ActionListener, Observer{
 		}
 		if (e.getSource().equals(viewLane)) {
 			if ( lane.isPartyAssigned() ) {
-				if ( laneShowing == false ) {
+				if (!laneShowing) {
 					lv.show();
 					laneShowing=true;
-				} else if ( laneShowing == true ) {
+				} else if (laneShowing) {
 					lv.hide();
 					laneShowing=false;
 				}
@@ -138,7 +146,7 @@ public class LaneStatusView implements ActionListener, Observer{
 		if ( le.isMechanicalProblem() ) {
 			maintenance.setBackground( Color.RED );
 		}	
-		if ( lane.isPartyAssigned() == false ) {
+		if (!lane.isPartyAssigned()) {
 			viewLane.setEnabled( false );
 			viewPinSetter.setEnabled( false );
 		} else {
@@ -148,9 +156,7 @@ public class LaneStatusView implements ActionListener, Observer{
 	}
 
 	public void receiveEvent(PinsetterEvent pe) {
-		pinsDown.setText( ( new Integer(pe.totalPinsDown()) ).toString() );
-//		foul.setText( ( new Boolean(pe.isFoulCommited()) ).toString() );
-		
+		pinsDown.setText( (Integer.valueOf(pe.totalPinsDown())).toString() );
 	}
 
 	@Override
