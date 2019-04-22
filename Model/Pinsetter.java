@@ -70,7 +70,7 @@ package Model;/*
  *
  */
 
-import Control.PinsetterEvent;
+import Control.Events.PinsetterEvent;
 import View.Observer;
 
 import java.util.*;

@@ -1,7 +1,7 @@
-package Control;/*  $Id$
+package Control.Events;/*  $Id$
  *
  *  Revisions:
- *    $Log: Control.LaneEvent.java,v $
+ *    $Log: Control.Events.LaneEvent.java,v $
  *    Revision 1.6  2003/02/16 22:59:34  ???
  *    added mechnanical problem flag
  *

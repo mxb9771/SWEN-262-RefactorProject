@@ -94,7 +94,7 @@ package Model;
  *   added conditions for the party choosing to play another game
  *
  *   Revision 1.20  2003/02/02 21:51:54  ???
- *   Control.LaneEvent may very well be observer method.
+ *   Control.Events.LaneEvent may very well be observer method.
  *
  *   Revision 1.19  2003/02/02 20:28:59  ???
  *   fixed sleep thread bug in lane
@@ -131,9 +131,9 @@ package Model;
  * 
  */
 
-import Control.ControlDeskEvent;
-import Control.LaneEvent;
-import Control.PinsetterEvent;
+import Control.Events.ControlDeskEvent;
+import Control.Events.LaneEvent;
+import Control.Events.PinsetterEvent;
 import Control.ScoreHistoryFile;
 import Model.LaneState.LaneStatusState;
 import Model.LaneState.LaneVacant;

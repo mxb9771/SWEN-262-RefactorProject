@@ -14,11 +14,11 @@ package View;/* View.ControlDeskView.java
  */
 
 import Model.ControlDesk;
-import Control.ControlDeskEvent;
+import Control.Events.ControlDeskEvent;
 import Model.Lane;
-import Control.LaneEvent;
+import Control.Events.LaneEvent;
 import Model.Pinsetter;
-import Control.PinsetterEvent;
+import Control.Events.PinsetterEvent;
 
 import java.awt.*;
 import java.awt.event.*;
@@ -193,7 +193,7 @@ public class ControlDeskView implements ActionListener, Observer {
 	/**
 	 * Receive a broadcast from a Model.ControlDesk
 	 *
-	 * @param ce	the Control.ControlDeskEvent that triggered the handler
+	 * @param ce	the Control.Events.ControlDeskEvent that triggered the handler
 	 *
 	 */
 

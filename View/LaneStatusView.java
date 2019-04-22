@@ -6,9 +6,9 @@ package View; /**
  * Window>Preferences>Java>Code Generation.
  */
 
-import Control.LaneEvent;
-import Control.PinsetterEvent;
-import Control.ControlDeskEvent;
+import Control.Events.LaneEvent;
+import Control.Events.PinsetterEvent;
+import Control.Events.ControlDeskEvent;
 import Model.*;
 
 import java.awt.*;

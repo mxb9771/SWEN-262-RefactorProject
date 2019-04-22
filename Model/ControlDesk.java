@@ -24,7 +24,7 @@ package Model;/* Model.ControlDesk.java
  * 		Updated comments to match javadoc format.
  * 		
  * 		Revision 1.7  2003/02/02 16:29:52  ???
- * 		Added Control.ControlDeskEvent and View.ControlDeskObserver. Updated Model.Queue to allow access to Vector so that contents could be viewed without destroying. Implemented observer model for most of Model.ControlDesk.
+ * 		Added Control.Events.ControlDeskEvent and View.ControlDeskObserver. Updated Model.Queue to allow access to Vector so that contents could be viewed without destroying. Implemented observer model for most of Model.ControlDesk.
  * 		
  * 		Revision 1.6  2003/02/02 06:09:39  ???
  * 		Updated many classes to support the View.ControlDeskView.
@@ -41,7 +41,7 @@ package Model;/* Model.ControlDesk.java
  */
 
 import Control.BowlerFile;
-import Control.ControlDeskEvent;
+import Control.Events.ControlDeskEvent;
 
 import java.util.*;
 import java.io.*;
@@ -213,7 +213,7 @@ public class ControlDesk extends Thread {
     /**
      * Broadcast an event to subscribing objects.
      * 
-     * @param event	the Control.ControlDeskEvent to broadcast
+     * @param event	the Control.Events.ControlDeskEvent to broadcast
      *
      */
 

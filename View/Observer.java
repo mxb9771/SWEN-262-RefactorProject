@@ -1,8 +1,8 @@
 package View;
 
-import Control.ControlDeskEvent;
-import Control.LaneEvent;
-import Control.PinsetterEvent;
+import Control.Events.ControlDeskEvent;
+import Control.Events.LaneEvent;
+import Control.Events.PinsetterEvent;
 
 public interface Observer {
 
