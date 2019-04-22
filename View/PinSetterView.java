@@ -14,8 +14,8 @@ package View;/*
  */
 
 import Control.ControlDeskEvent;
-import Model.LaneEvent;
-import Model.PinsetterEvent;
+import Control.LaneEvent;
+import Control.PinsetterEvent;
 
 import java.awt.*;
 import javax.swing.*;

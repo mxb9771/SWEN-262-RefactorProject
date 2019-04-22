@@ -1,12 +1,12 @@
-package Control;/* Control.ControlDesk.java
+package Model;/* Model.ControlDesk.java
  *
  *  Version:
  *  		$Id$
  * 
  *  Revisions:
- * 		$Log: Control.ControlDesk.java,v $
+ * 		$Log: Model.ControlDesk.java,v $
  * 		Revision 1.13  2003/02/02 23:26:32  ???
- * 		Control.ControlDesk now runs its own thread and polls for free lanes to assign queue members to
+ * 		Model.ControlDesk now runs its own thread and polls for free lanes to assign queue members to
  * 		
  * 		Revision 1.12  2003/02/02 20:46:13  ???
  * 		Added " 's Model.Party" to party names.
@@ -24,7 +24,7 @@ package Control;/* Control.ControlDesk.java
  * 		Updated comments to match javadoc format.
  * 		
  * 		Revision 1.7  2003/02/02 16:29:52  ???
- * 		Added Control.ControlDeskEvent and View.ControlDeskObserver. Updated Model.Queue to allow access to Vector so that contents could be viewed without destroying. Implemented observer model for most of Control.ControlDesk.
+ * 		Added Control.ControlDeskEvent and View.ControlDeskObserver. Updated Model.Queue to allow access to Vector so that contents could be viewed without destroying. Implemented observer model for most of Model.ControlDesk.
  * 		
  * 		Revision 1.6  2003/02/02 06:09:39  ???
  * 		Updated many classes to support the View.ControlDeskView.
@@ -40,10 +40,8 @@ package Control;/* Control.ControlDesk.java
  *
  */
 
-import Model.Bowler;
-import Model.Lane;
-import Model.Party;
-import Model.Queue;
+import Control.BowlerFile;
+import Control.ControlDeskEvent;
 
 import java.util.*;
 import java.io.*;
@@ -63,7 +61,7 @@ public class ControlDesk extends Thread {
 	private Vector<View.ControlDeskView> subscribers;
 
     /**
-     * Constructor for the Control.ControlDesk class
+     * Constructor for the Model.ControlDesk class
      *
      * @param numLanes	the numbler of lanes to be represented
      *
@@ -86,7 +84,7 @@ public class ControlDesk extends Thread {
 	}
 	
 	/**
-	 * Main loop for Control.ControlDesk's thread
+	 * Main loop for Model.ControlDesk's thread
 	 * 
 	 */
 	public void run() {
@@ -191,7 +189,7 @@ public class ControlDesk extends Thread {
 	}
 
     /**
-     * Accessor for the number of lanes represented by the Control.ControlDesk
+     * Accessor for the number of lanes represented by the Model.ControlDesk
      * 
      * @return an int containing the number of lanes represented
      *

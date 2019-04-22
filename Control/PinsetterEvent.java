@@ -1,7 +1,7 @@
-package Model;/*  $Id$
+package Control;/*  $Id$
  *
  *  Revisions:
- *    $Log: Model.PinsetterEvent.java,v $
+ *    $Log: Control.PinsetterEvent.java,v $
  *    Revision 1.2  2003/01/26 22:34:44  ???
  *    Total rewrite of lane and pinsetter for R2's observer model
  *    Added Model.Lane/Model.Pinsetter Observer
@@ -19,7 +19,7 @@ public class PinsetterEvent {
 	private int throwNumber;
 	private int pinsDownThisThrow;
 
-	/** Model.PinsetterEvent()
+	/** Control.PinsetterEvent()
 	 * 
 	 * creates a new pinsetter event
 	 * 

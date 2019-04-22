@@ -1,7 +1,7 @@
-package Model;/*  $Id$
+package Control;/*  $Id$
  *
  *  Revisions:
- *    $Log: Model.LaneEvent.java,v $
+ *    $Log: Control.LaneEvent.java,v $
  *    Revision 1.6  2003/02/16 22:59:34  ???
  *    added mechnanical problem flag
  *
@@ -23,12 +23,14 @@ package Model;/*  $Id$
  *
  */
 
+import Model.Bowler;
+import Model.Party;
+
 import java.util.HashMap;
 
 public class LaneEvent {
 
 	private Party p;
-	private int frame;
 	private int ball;
 	private Bowler bowler;
 	private int[][] cumulScore;
@@ -69,10 +71,6 @@ public class LaneEvent {
 	
 	public int getIndex() {
 		return index;
-	}
-
-	public int getFrame( ) {
-		return frame;
 	}
 
 	public int getBall( ) {

@@ -1,5 +1,5 @@
 
-import Control.ControlDesk;
+import Model.ControlDesk;
 import View.ControlDeskView;
 
 public class drive {
